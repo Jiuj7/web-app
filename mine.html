@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+
+        body {
+            background-color: rgba(245, 245, 245, 1);
+        }
+
+        .container {
+            width: 375px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background-image: url("./img/mineBg3.png"), url("./img/mineBg2.png"), url("./img/mineBg1.png");
+            background-position: -142px -30px, -3px -30px, 0 -57px;
+            background-repeat: no-repeat;
+        }
+
+        /* 顶部 */
+        .header {
+            border: 1px solid #fff;
+            width: 100%;
+            height: 280px;
+            /* background: linear-gradient(236.97deg, rgba(255, 131, 67, 1) 0%, rgba(255, 108, 114, 1) 100%); */
+        }
+
+        .title {
+            margin-top: 50px;
+        }
+
+        .title-mine {
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .title-icon {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+        }
+
+        .portrait {
+            text-align: center;
+            margin-top: 14px;
+        }
+
+        .portrait img {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+        }
+
+        .userName {
+            text-align: center;
+            margin-top: 9px;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .signature {
+            text-align: center;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .signature p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-right: 6px;
+        }
+
+        /* 列表栏 */
+        .list {
+            width: 335px;
+            height: 96px;
+            /* border: 1px solid; */
+            border-radius: 14px;
+            background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+            box-shadow: 0px 4px 8px rgba(97, 23, 8, 0.3), inset -2px -2px 0px rgba(255, 255, 255, 1), inset 2px 2px 0px rgba(255, 255, 255, 1);
+            display: flex;
+            margin: 0 auto;
+            position: relative;
+            top: -55px;
+        }
+
+        .list-items {
+            width: 70px;
+            height: 57px;
+            border-right: 1px solid rgba(255, 255, 255, 0.7);
+            margin: 20px auto;
+        }
+
+        .list-items:nth-child(5) {
+            border-right: none;
+        }
+
+        .list-items .items-title {
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .list-items .items-num {
+            margin-top: 5px;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        /* 中间内容 */
+        .mid-content{
+            position: relative;
+            top: -20px;
+        }
+        .content-item {
+            width: 335px;
+            height: 68px;
+
+            background: rgba(255, 255, 255, 1);
+            margin: 0 auto 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(92, 92, 92, 0.1);
+
+            display: flex;
+            align-items: center;
+        }
+
+        .content-item img {
+            width: 35px;
+            height: 27px;
+
+            margin-left: 15px;
+        }
+
+        .content-item p {
+            width: 250px;
+            margin-left: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content-item p span {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(255, 108, 114, 1);
+        }
+
+        .content-item p img {
+            width: 7px;
+            height: 12px;
+        }
+
+
+        /* 底部导航栏 */
+        .bottom-nav {
+            width: 375px;
+            height: 104px;
+            /* background-color: bisque; */
+
+            position: fixed;
+            bottom: 0;
+            left: 0;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: end;
+
+            background-image: url("./img/bNavBg.png");
+            background-position: -30px 17px;
+            background-repeat: no-repeat;
+        }
+
+        .bottom-nav .item {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        .bottom-nav .item img {
+            width: 22px;
+            height: 22px;
+        }
+
+        .bottom-nav .item span {
+            font-size: 14px;
+            margin-top: 4px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .bottom-nav .item-center {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+
+            background-image: url("./img/bNavCircle.png");
+            background-size: 70px 70px;
+
+            position: relative;
+            top: -35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 顶部 -->
+        <div class="header">
+            <div class="title">
+                <div class="title-mine">
+                    <p>我的页面</p>
+                </div>
+                <div class="title-icon">
+                    <img src="./img/setting.svg" alt="">
+                </div>
+            </div>
+            <div class="portrait">
+                <img src="./img/pyy.jpg" alt="">
+            </div>
+            <div class="userName">
+                <p>pyy 彭于晏</p>
+            </div>
+            <div class="signature">
+                <p>点击编辑个人签名</p>
+                <img src="./img/modify.svg" alt="">
+            </div>
+        </div>
+        <!-- 列表栏 -->
+        <div class="list">
+            <div class="list-items">
+                <p class="items-title">粉丝</p>
+                <p class="items-num">1145</p>
+            </div>
+            <div class="list-items">
+                <p class="items-title">待发货</p>
+                <p class="items-num">2</p>
+            </div>
+            <div class="list-items">
+                <p class="items-title">待收货</p>
+                <p class="items-num">6</p>
+            </div>
+            <div class="list-items">
+                <p class="items-title">待评价</p>
+                <p class="items-num">12</p>
+            </div>
+            <div class="list-items">
+                <p class="items-title">售后</p>
+            </div>
+        </div>
+        <!-- 中间内容 -->
+        <div class="mid-content">
+            <div class="content-item">
+                <img src="./img/MidIcon.png" alt="">
+                <p><span>在线客服</span><img src="./img/arrow.png" alt=""></p>
+            </div>
+            <div class="content-item">
+                <img src="./img/MidIcon.png" alt="">
+                <p><span>在线客服</span><img src="./img/arrow.png" alt=""></p>
+            </div>
+            <div class="content-item">
+                <img src="./img/MidIcon.png" alt="">
+                <p><span>在线客服</span><img src="./img/arrow.png" alt=""></p>
+            </div>
+            <div class="content-item">
+                <img src="./img/MidIcon.png" alt="">
+                <p><span>在线客服</span><img src="./img/arrow.png" alt=""></p>
+            </div>
+        </div>
+        <!-- 底部导航栏 -->
+        <div class="bottom-nav">
+            <div class="item">
+                <img src="./img/home.png" alt="">
+                <span>首页</span>
+            </div>
+            <div class="item">
+                <img src="./img/home.png" alt="">
+                <span>首页</span>
+            </div>
+            <div class="item item-center">
+                <img src="./img/home.png" alt="">
+                <!-- <span>首页</span> -->
+            </div>
+            <div class="item">
+                <img src="./img/home.png" alt="">
+                <span>首页</span>
+            </div>
+            <div class="item">
+                <img src="./img/home.png" alt="">
+                <span>首页</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
