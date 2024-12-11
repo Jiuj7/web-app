@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物流</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .container {
+            width: 375px;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+
+            background-image: url("./img/map.png");
+            background-repeat: no-repeat;
+            background-position: 0 18px;
+        }
+
+        .head {
+            width: 341px;
+            height: 30px;
+
+            display: flex;
+            justify-content: space-between;
+            margin: 18px auto 0 auto;
+        }
+
+        .head .return,
+        .customer {
+            width: 30px;
+            height: 30px;
+            opacity: 1;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 2px 4px rgba(115, 6, 6, 0.2), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10px);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .head .return img,
+        .customer img {
+            width: 12px;
+            height: 12px;
+        }
+
+        .processAll {
+            width: 341px;
+            height: 100px;
+            opacity: 1;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 8px rgba(166, 3, 0, 0.12), inset -2px -2px 0px rgba(255, 255, 255, 1), inset 2px 2px 0px rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10px);
+
+            /* display: flex; */
+            /* justify-content: center; */
+            margin: 0 auto;
+        }
+
+        .processAll .goods .goods-item {
+            width: 58px;
+            height: 58px;
+            opacity: 1;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 2px 4px rgba(97, 23, 8, 0.2), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10px);
+        }
+        .processAll .goods .goods-item img{
+            width: 58px;
+            height: 58px;
+        }
+
+        .process {
+            width: 341px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .process-item {
+            width: 58px;
+        }
+
+        .pi-content {
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 108, 114, 1);
+            margin-top: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="return"><img src="./img/return.svg" alt=""></div>
+            <div class="customer"><img src="./img/customer.svg" alt=""></div>
+        </div>
+        <div class="processAll">
+            <div class="goods">
+                <div class="goods-item">
+                    <img src="./img/earphone.svg" alt="">
+                </div>
+            </div>
+            <div class="process">
+                <div class="process-item">
+                    <div>
+                        <img src="./img/process-item.svg" alt="">
+                        <div class="pi-content">商家</div>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div>
+                        <img src="./img/process-item.svg" alt="">
+                        <div class="pi-content">商家</div>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div>
+                        <img src="./img/process-item.svg" alt="">
+                        <div class="pi-content">商家</div>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div>
+                        <img src="./img/process-item.svg" alt="">
+                        <div class="pi-content">商家</div>
+                    </div>
+                </div>
+                <div class="process-item">
+                    <div>
+                        <img src="./img/process-item.svg" alt="">
+                        <div class="pi-content">商家</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

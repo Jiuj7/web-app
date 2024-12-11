@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的购物车</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background-color: rgba(245, 245, 245, 1);
+        }
+
+        .container {
+            width: 375px;
+            height: 90%;
+            position: relative;
+            overflow: scroll;
+            margin: 0 auto;
+            /*设置背景图片*/
+            background-image: url("./img/myCartBg.png");
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .head {
+            padding-top: 50px;
+            margin-bottom: 18px;
+        }
+
+        .head-mine {
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            color: rgba(255, 108, 114, 1);
+        }
+
+        .head-icon {
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+        }
+
+        .head-icon img {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* 商品列表 */
+        .goods {
+            width: 375px;
+            /* height: 1000px; */
+
+        }
+
+        .goods .goods-item {
+            width: 350px;
+            height: 120px;
+
+            border-radius: 20px;
+            background-image: url("./img/cartGitemBg.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: -5px 0;
+
+            display: flex;
+
+            margin: 0 auto;
+        }
+
+        .goods-item .gi-img {
+            width: 89px;
+            height: 110px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-left: 13px;
+        }
+
+        .goods-item .gi-img img {
+            width: 89px;
+            height: 80px;
+        }
+
+        .right-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 25px;
+        }
+
+        .right-description {
+            width: 110px;
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: center;
+        }
+
+        .rd-disposition {
+            width: 85px;
+            font-size: 10px;
+            margin-left: 5px;
+            margin-top: 1px;
+        }
+
+        .rd-color img {
+            background-image: url("img/rd-cirColor.svg");
+            background-repeat: no-repeat;
+            background-position: 1px 1.5px;
+        }
+
+        .rd-dropDown {
+            width: 6px;
+            height: 12px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rd-dropDown img {
+            width: 6px;
+            height: 12px;
+        }
+
+        .right-bottom {
+            width: 215px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-top: 2px;
+        }
+
+        .right-bottom .rb-price {
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgba(255, 108, 114, 1);
+        }
+
+        .right-bottom .rb-oldPrice {
+            font-size: 10px;
+            color: rgba(153, 153, 153, 1);
+            text-decoration: line-through;
+            margin-top: 5px;
+        }
+
+        .right-bottom .rb-price::before {
+            content: "￥";
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .right-bottom .rb-price::after {
+            content: "RMB";
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .right-bottom .rb-count {
+            width: 81px;
+            height: 30px;
+
+            border-radius: 270px;
+            background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+            box-shadow: -2px -2px 4px rgba(255, 255, 255, 1),
+                2px 2px 4px rgba(161, 3, 8, 0.2),
+                inset -0.6px -0.6px 0px rgba(255, 255, 255, 1),
+                inset 0.6px 0.6px 0px rgba(255, 255, 255, 1);
+
+            color: rgba(255, 255, 255, 1);
+            line-height: 28px;
+            text-align: center;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .right-bottom .rb-count .add,
+        .sub {
+            width: 34px;
+        }
+
+        .right-bottom .rb-count .sub img {
+            width: 11px;
+            height: 11px;
+        }
+
+
+        .custom-checkbox {
+            position: relative;
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            top: 45px;
+            left: 8px;
+        }
+
+        .custom-checkbox input[type="checkbox"] {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .custom-checkbox .checkbox-mark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: all 0.3s;
+            box-sizing: border-box;
+            background-color: rgba(153, 153, 153, 0.4);
+        }
+
+        .custom-checkbox input[type="checkbox"]:checked+.checkbox-mark:after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: rgba(255, 108, 114, 1);
+            background-image: url("./img/select.svg");
+            background-repeat: no-repeat;
+            background-size: 15px 25px;
+            background-position: 4px 0;
+        }
+
+        .checkout {
+            width: 375px;
+            margin-bottom: 200px;
+        }
+
+        .checkout-doubt {
+            width: 350px;
+
+            color: rgba(255, 108, 114, 1);
+            font-size: 10px;
+            text-align: right;
+
+            margin: 0 auto;
+        }
+
+        .checkout-oldPrice {
+            width: 330px;
+
+            font-size: 14px;
+            font-weight: bolder;
+
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto 0 auto;
+        }
+
+
+        .cPrice {
+            font-size: 16px;
+        }
+
+        .cPrice::before {
+            content: "￥";
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        .cPrice::after {
+            content: "RMB";
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        .checkout-preferent {
+            width: 330px;
+
+            font-size: 14px;
+            font-weight: bolder;
+
+            display: flex;
+            justify-content: space-between;
+            margin: 10px auto 0 auto;
+        }
+
+        .checkout-preferent .cPreferent {
+            display: flex;
+        }
+
+        .checkout-preferent .cPreferent .cPreferent-goods {
+            padding-top: 4px;
+            font-size: 10px;
+            font-weight: normal;
+            color: rgba(153, 153, 153, 1);
+        }
+
+        .checkout-sum {
+            width: 330px;
+
+            font-size: 16px;
+            font-weight: bolder;
+            color: rgba(255, 108, 114, 1);
+
+            display: flex;
+            justify-content: space-between;
+            margin: 40px auto 0 auto;
+        }
+        .checkout-sum .cPrice{
+            font-size: 18px;
+        }
+
+        .checkout-btn {
+            width: 338px;
+            height: 48px;
+            opacity: 1;
+
+            font-size: 16px;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+            line-height: 46px;
+
+            border-radius: 283px;
+            background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+            box-shadow: 0px 3px 6px rgba(166, 3, 0, 0.3), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
+
+            margin: 10px auto;
+        }
+
+
+        /* 底部导航栏 */
+        .bottom-nav {
+            width: 375px;
+            height: 104px;
+            /* background-color: bisque; */
+
+            position: fixed;
+            bottom: 0;
+            left: 0;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: end;
+
+            background-image: url("./img/bNavBg.png");
+            background-position: -30px 17px;
+            background-repeat: no-repeat;
+        }
+
+        .bottom-nav .item {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        .bottom-nav .item img {
+            width: 22px;
+            height: 22px;
+        }
+
+        .bottom-nav .item span {
+            font-size: 14px;
+            margin-top: 4px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .bottom-nav .item-center {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+
+            opacity: 1;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: -2px -2px 4px rgba(255, 255, 255, 1), 2px 2px 4px rgba(161, 3, 8, 0.3), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
+            
+            position: relative;
+            top: -40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 顶部 -->
+        <div class="head">
+            <div class="head-mine">
+                <p>我的购物车</p>
+            </div>
+            <div class="head-icon">
+                <img src="./img/edit.svg" alt="">
+            </div>
+        </div>
+        <!-- 商品列表 -->
+        <div class="goods">
+            <div class="goods-item">
+                <div class="gi-img">
+                    <img src="./img/earphone.svg" alt="">
+                </div>
+                <div class="gi-right">
+                    <div class="right-title">
+                        漫步者/HECAT
+                    </div>
+                    <div class="right-description">
+                        <div class="rd-color">
+                            <img src="./img/rd-color.svg" alt="">
+                        </div>
+                        <div class="rd-disposition">
+                            奢华金/官方标配
+                        </div>
+                        <div class="rd-dropDown">
+                            <img src="./img/rd-dropDown.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="right-bottom">
+                        <div class="rb-price">224</div>
+                        <div class="rb-oldPrice">￥299</div>
+                        <div class="rb-count">
+                            <div class="add">
+                                <img src="./img/add.svg" alt="">
+                            </div>
+                            <div class="count">01</div>
+                            <div class="sub">
+                                <img src="./img/sub.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="roundCheckbox1">
+                    <label for="roundCheckbox1" class="checkbox-mark"></label>
+                </div>
+            </div>
+            <div class="goods-item">
+                <div class="gi-img">
+                    <img src="./img/earphone.svg" alt="">
+                </div>
+                <div class="gi-right">
+                    <div class="right-title">
+                        大疆 特洛Tello
+                    </div>
+                    <div class="right-description">
+                        <div class="rd-color">
+                            <img src="./img/rd-color.svg" alt="">
+                        </div>
+                        <div class="rd-disposition">
+                            灰色/官方标配
+                        </div>
+                        <div class="rd-dropDown">
+                            <img src="./img/rd-dropDown.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="right-bottom">
+                        <div class="rb-price">2988</div>
+                        <div class="rb-oldPrice"></div>
+                        <div class="rb-count">
+                            <div class="add">
+                                <img src="./img/add.svg" alt="">
+                            </div>
+                            <div class="count">01</div>
+                            <div class="sub">
+                                <img src="./img/sub.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="roundCheckbox2">
+                    <label for="roundCheckbox2" class="checkbox-mark"></label>
+                </div>
+            </div>
+            <div class="goods-item">
+                <div class="gi-img">
+                    <img src="./img/earphone.svg" alt="">
+                </div>
+                <div class="gi-right">
+                    <div class="right-title">
+                        MIUI/小米智能手环
+                    </div>
+                    <div class="right-description">
+                        <div class="rd-color">
+                            <img src="./img/rd-color.svg" alt="">
+                        </div>
+                        <div class="rd-disposition">
+                            标准黑/官方标配
+                        </div>
+                        <div class="rd-dropDown">
+                            <img src="./img/rd-dropDown.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="right-bottom">
+                        <div class="rb-price">299</div>
+                        <div class="rb-oldPrice"></div>
+                        <div class="rb-count">
+                            <div class="add">
+                                <img src="./img/add.svg" alt="">
+                            </div>
+                            <div class="count">01</div>
+                            <div class="sub">
+                                <img src="./img/sub.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" id="roundCheckbox3">
+                    <label for="roundCheckbox3" class="checkbox-mark"></label>
+                </div>
+            </div>
+        </div>
+        <!-- 结账 -->
+        <div class="checkout">
+            <div class="checkout-doubt">点击查看购买疑问？</div>
+            <div class="checkout-oldPrice">
+                <div>商品总价</div>
+                <div class="cPrice">299</div>
+            </div>
+            <div class="checkout-preferent">
+                <div class="cPreferent">
+                    <div>优惠</div>
+                    <div class="cPreferent-goods">（漫步者/HECAT）</div>
+                </div>
+                <div class="cPrice">-75</div>
+            </div>
+            <div class="checkout-sum">
+                <div>合计</div>
+                <div class="cPrice">224</div>
+            </div>
+            <div class="checkout-btn">立即付款</div>
+        </div>
+
+
+        <!-- 底部导航栏 -->
+        <div class="bottom-nav">
+            <div class="item">
+                <img src="./img/home.png" alt="">
+                <span>首页</span>
+            </div>
+            <div class="item">
+                <img src="./img/home.png" alt="">
+                <span>首页</span>
+            </div>
+            <div class="item item-center">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                    height="30" viewBox="0 0 24.1634521484375 24.06768798828125" fill="none">
+                    <g filter="url(#filter_mL6j951dclYaCv7Xy1aBe)">
+                        <path fill-rule="evenodd" fill="rgba(255, 111, 108, 1)"
+                            d="M19.8398 15.0143L7.66953 15.0143C7.08124 15.0143 6.60326 14.5772 6.56649 14.0672L5.8679 3.39417C5.83113 2.81134 5.50021 2.33779 4.98546 2.0828L3.88242 1.60926C3.58827 1.49998 3.29413 1.60926 3.14705 1.90067C2.99998 2.19209 3.14705 2.4835 3.4412 2.62921L4.50747 3.10276C4.65455 3.17561 4.76485 3.32132 4.76485 3.50345L5.42668 14.1765C5.50021 15.2693 6.49295 16.1436 7.63277 16.1436L19.8398 16.1436C20.1339 16.1436 20.3913 15.8886 20.3913 15.5972C20.3913 15.3057 20.1339 15.0143 19.8398 15.0143ZM20.6855 4.85124C20.3545 4.48698 19.8766 4.26842 19.3618 4.26842L8.11075 4.26842C7.81661 4.26842 7.55923 4.5234 7.55923 4.81482C7.55923 5.10623 7.81661 5.36122 8.11075 5.36122L19.3618 5.36122C19.5456 5.36122 19.7295 5.43407 19.8398 5.57978C19.9501 5.72549 20.0236 5.90762 20.0236 6.08976L19.1412 10.8981L19.1412 10.9345C19.1044 11.2624 18.847 11.4809 18.5161 11.5174L8.84612 12.2459C8.55197 12.2823 8.33136 12.5373 8.33136 12.8287C8.36813 13.1201 8.58874 13.3387 8.88288 13.3387L8.91965 13.3387L18.5529 12.6102C19.3986 12.5373 20.0972 11.9181 20.1707 11.0802L21.0531 6.23546L21.0531 6.19904C21.1634 5.72549 21.0164 5.21551 20.6855 4.85124ZM6.0885 18.2927C6.0885 18.9964 6.66514 19.5677 7.37539 19.5677C8.08564 19.5677 8.66228 18.9964 8.66228 18.2927C8.66228 17.5891 8.08564 17.0178 7.37539 17.0178C6.66514 17.0178 6.0885 17.5891 6.0885 18.2927ZM16.3836 18.2927C16.3836 18.9964 16.9602 19.5677 17.6705 19.5677C18.3807 19.5677 18.9574 18.9964 18.9574 18.2927C18.9574 17.5891 18.3807 17.0178 17.6705 17.0178C16.9602 17.0178 16.3836 17.5891 16.3836 18.2927Z">
+                        </path>
+                    </g>
+                    <defs>
+                        <filter id="filter_mL6j951dclYaCv7Xy1aBe" x="0" y="0" width="24.1634521484375"
+                            height="24.06768798828125" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="feFloodId_mL6j951dclYaCv7Xy1aBe" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                result="hardAlpha_mL6j951dclYaCv7Xy1aBe" />
+                            <feOffset dx="0" dy="1.5" />
+                            <feGaussianBlur stdDeviation="1.5" />
+                            <feComposite in2="hardAlpha_mL6j951dclYaCv7Xy1aBe" operator="out" />
+                            <feColorMatrix type="matrix"
+                                values="0 0 0 0 0.6313725490196078 0 0 0 0 0.011764705882352941 0 0 0 0 0.03137254901960784 0 0 0 0.3 0" />
+                            <feBlend mode="normal" in2="feFloodId_mL6j951dclYaCv7Xy1aBe"
+                                result="dropShadow_1_mL6j951dclYaCv7Xy1aBe" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="dropShadow_1_mL6j951dclYaCv7Xy1aBe"
+                                result="shape_mL6j951dclYaCv7Xy1aBe" />
+                        </filter>
+                    </defs>
+                </svg>
+            </div>
+            <div class="item">
+                <img src="./img/home.png" alt="">
+                <span>首页</span>
+            </div>
+            <div class="item">
+                <img src="./img/home.png" alt="">
+                <span>首页</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

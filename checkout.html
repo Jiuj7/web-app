@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结算</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .container {
+            width: 375px;
+            height: 100%;
+            position: relative;
+            overflow: scroll;
+            margin: 0 auto;
+        }
+
+        .success {
+            width: 98px;
+            height: 98px;
+
+            border-radius: 50%;
+            opacity: 1;
+            background-color: rgba(255, 108, 114, 1);
+            box-shadow: 0px 4px 12px rgba(166, 3, 0, 0.2), inset -2px -2px 0px rgba(255, 255, 255, 1), inset 2px 2px 0px rgba(255, 255, 255, 1);
+            background-image: url("./img/select.svg");
+            background-repeat: no-repeat;
+            background-size: 46px 31px;
+            background-position: center;
+
+            margin: 96px auto 0 auto;
+        }
+
+        .title {
+            width: 322px;
+
+            color: rgba(102, 102, 102, 1);
+            font-size: 14px;
+
+            margin: 21px auto 0 auto;
+        }
+
+
+        .sTitle {
+            font-size: 16px;
+            color: rgba(51, 51, 51, 1);
+            font-weight: bolder;
+        }
+
+        .address {
+            width: 322px;
+
+            margin: 48px auto 0 auto;
+            display: flex;
+        }
+
+        .address-content {
+            font-size: 14px;
+            color: rgba(102, 102, 102, 1);
+            margin-left: 8px;
+        }
+
+        .address-content div:nth-child(2) {
+            margin-top: 5px;
+        }
+
+
+        /* 产品列表 */
+        .products {
+            width: 322px;
+
+            margin: 48px auto 0 auto;
+            display: flex;
+        }
+
+        .products-goods {
+            width: 274px;
+            /* height: 1000px; */
+
+        }
+
+        .products-goods .goods-item {
+            width: 274px;
+            height: 43px;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            margin: 0 auto 33px auto;
+        }
+
+        .goods-item .gi-img {
+            width: 41px;
+            height: 43px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-left: 5px;
+        }
+
+        .goods-item .gi-img img {
+            width: 41px;
+            height: 43px;
+        }
+
+        .gi-mid {
+            margin-left: 10px;
+        }
+
+        .gm-title {
+            font-size: 14px;
+            font-weight: 600;
+            /* margin-top: 25px; */
+        }
+
+        .right-description {
+            width: 110px;
+            display: flex;
+            align-items: center;
+            margin-top: 4px;
+        }
+
+        .rd-disposition {
+            width: 85px;
+            font-size: 10px;
+            margin-left: 5px;
+            margin-top: 1px;
+        }
+
+        .rd-color img {
+            background-image: url("img/rd-cirColor.svg");
+            background-repeat: no-repeat;
+            background-position: 1px 1.5px;
+        }
+
+        .rd-dropDown {
+            width: 6px;
+            height: 12px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rd-dropDown img {
+            width: 6px;
+            height: 12px;
+        }
+
+        .gi-right {
+            width: 215px;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+
+            margin-left: 20px;
+        }
+
+        .gi-right .gr-price {
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgba(255, 108, 114, 1);
+        }
+
+        .gi-right .gr-price::before {
+            content: "￥";
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        .gi-right .gr-price::after {
+            content: "RMB";
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        /* 金额 */
+        .money {
+            width: 322px;
+
+            margin: 20px auto 0 auto;
+            display: flex;
+        }
+
+        .checkout {
+            width: 274px;
+        }
+
+        .cPrice {
+            font-size: 16px;
+        }
+
+        .cPrice::before {
+            content: "￥";
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        .cPrice::after {
+            content: "RMB";
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        .checkout-oldPrice {
+            width: 249px;
+
+            font-size: 14px;
+            font-weight: bolder;
+
+            display: flex;
+            justify-content: space-between;
+            margin: 4px auto 0 auto;
+        }
+
+
+        .checkout-preferent {
+            width: 249px;
+
+            font-size: 14px;
+            font-weight: bolder;
+
+            display: flex;
+            justify-content: space-between;
+            margin: 10px auto 0 auto;
+        }
+
+        .checkout-preferent .cPreferent {
+            display: flex;
+        }
+
+        .checkout-preferent .cPreferent .cPreferent-goods {
+            padding-top: 4px;
+            font-size: 10px;
+            font-weight: normal;
+            color: rgba(153, 153, 153, 1);
+        }
+
+        .checkout-sum {
+            width: 249px;
+
+            font-size: 16px;
+            font-weight: bolder;
+            color: rgba(255, 108, 114, 1);
+
+            display: flex;
+            justify-content: space-between;
+            margin: 40px auto 0 auto;
+        }
+
+        .checkout-sum .cPrice {
+            font-size: 18px;
+        }
+
+        /* 按钮 */
+        .btn {
+            width: 338px;
+            height: 48px;
+
+            font-size: 18px;
+            color: rgba(255, 255, 255, 1);
+
+            opacity: 1;
+            border-radius: 283px;
+            background-color: rgba(255, 108, 114, 1);
+            box-shadow: 0px 3px 6px rgba(166, 3, 0, 0.3), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
+        
+            margin:37px auto 0 auto;
+            text-align: center;
+            line-height: 46px;
+
+            display: flex;
+
+            background-image: url("./img/btn-left.png");
+            background-repeat: no-repeat;
+
+        }
+        .btn .return-cart{
+            width: 133px;
+        }
+        .btn .return-home{
+            width: 205px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="success"></div>
+        <div class="title">您已成功下单，感谢您的购买，本次购买信息如下：</div>
+        <!-- 地址 -->
+        <div class="address">
+            <div class="sTitle">地址：</div>
+            <div class="address-content">
+                <div>广州市 白云区 金山街道</div>
+                <div>免配送费，48小时内发货</div>
+            </div>
+        </div>
+        <!-- 产品 -->
+        <div class="products">
+            <div class="sTitle">产品：</div>
+            <div class="products-goods">
+                <div class="goods-item">
+                    <div class="gi-img">
+                        <img src="./img/earphone.svg" alt="">
+                    </div>
+                    <div class="gi-mid">
+                        <div class="gm-title">
+                            漫步者/HECAT
+                        </div>
+                        <div class="right-description">
+                            <div class="rd-color">
+                                <img src="./img/rd-color.svg" alt="">
+                            </div>
+                            <div class="rd-disposition">
+                                奢华金/官方标配
+                            </div>
+                            <div class="rd-dropDown">
+                                <img src="./img/rd-dropDown.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gi-right">
+                        <div class="gr-price">224</div>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <div class="gi-img">
+                        <img src="./img/earphone.svg" alt="">
+                    </div>
+                    <div class="gi-mid">
+                        <div class="gm-title">
+                            漫步者/HECAT
+                        </div>
+                        <div class="right-description">
+                            <div class="rd-color">
+                                <img src="./img/rd-color.svg" alt="">
+                            </div>
+                            <div class="rd-disposition">
+                                奢华金/官方标配
+                            </div>
+                            <div class="rd-dropDown">
+                                <img src="./img/rd-dropDown.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gi-right">
+                        <div class="gr-price">224</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 金额 -->
+        <div class="money">
+            <div class="sTitle">金额：</div>
+            <div class="checkout">
+                <div class="checkout-oldPrice">
+                    <div>商品总价</div>
+                    <div class="cPrice">299</div>
+                </div>
+                <div class="checkout-preferent">
+                    <div class="cPreferent">
+                        <div>优惠</div>
+                        <div class="cPreferent-goods">（漫步者/HECAT）</div>
+                    </div>
+                    <div class="cPrice">-75</div>
+                </div>
+                <div class="checkout-sum">
+                    <div>合计</div>
+                    <div class="cPrice">224</div>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <div class="return-cart">返回购物车</div>
+            <div class="return-home">返回主页</div>
+        </div>
+    </div>
+</body>
+
+</html>
