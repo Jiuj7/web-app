@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品详情</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            font-size: 1px;
+            height: 100%;
+        }
+
+        .container {
+            width: 375rem;
+            height: 811rem;
+
+            background: linear-gradient(118.2deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+
+            position: relative;
+
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 顶部区域 */
+        .header {
+            width: 317rem;
+            min-height: 50rem;
+            /* position: relative; */
+
+            padding: 10rem 0;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            margin: 0 auto;
+        }
+
+        .header .text {
+            font-size: 18rem;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .header .img {
+            width: 38rem;
+            height: 38rem;
+
+            opacity: 1;
+            border-radius: 8rem;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0rem 3rem 6rem rgba(115, 6, 6, 0.2), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10rem);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header .img img {
+            width: 9rem;
+            height: 16rem;
+        }
+
+
+        /* .features {} */
+
+        .f-item {
+            width: 70rem;
+            height: 70rem;
+
+            opacity: 1;
+            border-radius: 16rem;
+            background: rgba(204, 204, 204, 0.3);
+            box-shadow: 0rem 4rem 8rem rgba(115, 6, 6, 0.3), inset -1.5rem -1.5rem 0rem rgba(255, 255, 255, 1), inset 1.5rem 1.5rem 0rem rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10rem);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            margin: 29rem 0 25rem 31rem;
+        }
+
+        .f-item .img {
+            width: 31rem;
+            height: 30rem;
+        }
+
+        .f-item .img img {
+            width: 31rem;
+            height: 30rem;
+        }
+
+        .f-item p {
+            width: 20rem;
+            height: 20rem;
+            line-height: 28rem;
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .introduce {
+            width: 375rem;
+            height: 520rem;
+            position: absolute;
+            bottom: 0;
+            /* 
+            padding-top: 112rem;
+            padding-bottom: 8rem; */
+
+            background-image: url('./img/pdBg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+
+        }
+
+        .color {
+            width: 318rem;
+            height: 70rem;
+
+            display: flex;
+
+            margin: 110rem auto 0 auto;
+        }
+
+        .color-item {
+            width: 46rem;
+            height: 70rem;
+
+        }
+
+        .color-item .img {
+            width: 40rem;
+            height: 40rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            margin: 0 auto;
+        }
+
+        .color-item .img .out {
+            width: 40rem;
+            height: 40rem;
+        }
+
+        .color-item .img .in {
+            width: 37rem;
+            height: 37rem;
+            position: absolute;
+            left: 1rem;
+            top: 3rem;
+        }
+
+        .color-item .colorText {
+            height: 26rem;
+            line-height: 26rem;
+            font-size: 14rem;
+            color: rgba(108, 127, 133, 1);
+            text-align: center;
+
+        }
+
+
+        .introduce .text {
+            width: 318rem;
+            height: 38rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin: 0 auto;
+        }
+
+        .text .name {
+            font-size: 24rem;
+            font-weight: bolder;
+            color: rgba(255, 108, 114, 1);
+        }
+
+        .classify {
+            width: 318rem;
+
+            font-size: 20rem;
+            color: rgba(255, 108, 114, 1);
+
+            margin: 0 auto 8rem auto;
+        }
+
+        .text .counts {
+            width: 89rem;
+            height: 38rem;
+            opacity: 1;
+            border-radius: 197rem;
+            background: rgba(255, 109, 111, 0.16);
+            box-shadow: 0rem 2rem 4rem rgba(166, 3, 0, 0.2), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
+
+            color: rgba(255, 109, 111, 1);
+            text-align: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .text .counts .count {
+            font-size: 14rem;
+        }
+
+        .text .counts .add,
+        .sub {
+            width: 34rem;
+        }
+
+        .text .counts .sub img {
+            width: 12rem;
+            height: 12rem;
+        }
+
+        .introduce .description {
+            width: 318rem;
+            font-size: 10rem;
+            color: rgba(153, 153, 153, 1);
+
+            margin: 0 auto;
+        }
+
+        .introduce .address {
+            width: 315rem;
+            /* height: 63rem; */
+            border-top: 0.1rem dashed rgba(153, 153, 153, 1);
+            border-width: 2rem;
+
+            margin: 20rem auto;
+            padding-top: 10rem;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .address-img {
+            width: 18rem;
+            /* height: 63rem; */
+        }
+
+        .address-img img {
+            width: 18rem;
+            height: 20rem;
+        }
+
+        .address-text {
+            width: 285rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .address-text .at-left .citys {
+            display: flex;
+            align-items: end;
+        }
+
+        .address-text .at-left .citys .city {
+            font-size: 14rem;
+            color: rgba(51, 51, 51, 1);
+        }
+
+        .address-text .at-left .citys .fee {
+            font-size: 12rem;
+            color: rgba(102, 102, 102, 1);
+
+            margin-left: 13rem;
+        }
+
+        .address-text .at-left .detailed {
+            margin-top: 5rem;
+            font-size: 10rem;
+            color: rgba(102, 102, 102, 1);
+        }
+
+        .address-text .at-left .time {
+            margin-top: 5rem;
+            font-size: 10rem;
+            color: rgba(51, 51, 51, 1);
+        }
+
+        .address-text .at-right {
+            width: 7rem;
+            height: 14rem;
+        }
+
+        .address-text .at-right img {
+            width: 7rem;
+            height: 14rem;
+        }
+
+
+        .introduce .options {
+            width: 315rem;
+            border-top: 1rem dashed rgba(153, 153, 153, 1);
+            border-width: 2rem;
+
+            margin: 20rem auto;
+            padding-top: 14rem;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .options-img {
+            width: 18rem;
+        }
+
+        .options-img img {
+            width: 18rem;
+            height: 20rem;
+        }
+
+        .options-text {
+            width: 285rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .options-text .ot-left {
+            font-size: 10rem;
+            color: rgba(51, 51, 51, 1);
+        }
+        .options-text .ot-right{
+            width: 7rem;
+            height: 14rem;
+        }
+        .options-text .ot-right img{
+            width: 7rem;
+            height: 14rem;
+        }
+
+
+        /* 按钮 */
+        .bottom {
+            width: 328rem;
+            display: flex;
+            justify-content: space-between;
+
+            margin: 0 auto;
+        }
+
+        .bottom .cope {
+            color: rgba(255, 109, 111, 1);
+        }
+
+        .bottom .cope .money {
+            font-size: 24rem;
+            font-weight: bolder;
+        }
+
+        .bottom .cope .money::before {
+            content: '￥';
+            font-size: 20rem;
+        }
+
+        .bottom .cope .money::after {
+            content: '起';
+            font-size: 20rem;
+        }
+
+        .bottom .cope .copeText {
+            color: rgba(153, 153, 153, 1);
+            font-size: 14rem;
+        }
+
+        .bottom .btn {
+            width: 196rem;
+            height: 54rem;
+
+            font-size: 18rem;
+            color: rgba(255, 255, 255, 1);
+
+            opacity: 1;
+            border-radius: 283rem;
+            background: linear-gradient(177.87deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+            box-shadow: 0rem 3rem 6rem rgba(166, 3, 0, 0.3), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
+
+            text-align: center;
+            line-height: 54rem;
+
+            display: flex;
+        }
+
+        .bottom .btn .return-cart {
+            width: 86rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("./img/btn-left.png");
+            background-repeat: no-repeat;
+            background-size: 86rem 56rem;
+        }
+
+        .bottom .btn .return-cart img {
+            width: 32rem;
+            height: 32rem;
+        }
+
+        .bottom .btn .return-home {
+            width: 110rem;
+        }
+
+
+
+
+
+        .goodsImg {
+            width: 375rem;
+            height: 420rem;
+
+            position: absolute;
+
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .goodsImg .itemImg {
+            width: 654rem;
+            height: 397rem;
+
+            margin: 0 auto;
+
+            position: absolute;
+            top: 40rem;
+            left: -65rem;
+        }
+
+        .goodsImg .itemImg img {
+            width: 654rem;
+            height: 397rem;
+        }
+
+        .goodsImg .itemShadow {
+            width: 225rem;
+            height: 35rem;
+
+            position: absolute;
+            left: 120rem;
+            bottom: 45rem;
+        }
+
+        .goodsImg .itemShadow img {
+            width: 275rem;
+            height: 75rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 顶部区域 -->
+        <div class="header">
+            <div class="img">
+                <img src="./img/return2.svg" alt="">
+            </div>
+            <p class="text">耳机</p>
+            <div class="img">
+                <img src="./img/more3.svg" alt="">
+            </div>
+        </div>
+        <div class="features">
+            <div class="f-item">
+                <div class="img">
+                    <img src="./img/bluetooth.svg" alt="">
+                </div>
+                <p>蓝牙</p>
+            </div>
+            <div class="f-item">
+                <div class="img">
+                    <img src="./img/wifi.svg" alt="">
+                </div>
+                <p>蓝牙</p>
+            </div>
+            <div class="f-item">
+                <div class="img">
+                    <img src="./img/fastCharging.svg" alt="">
+                </div>
+                <p>蓝牙</p>
+            </div>
+        </div>
+        <div class="goodsImg">
+            <div class="itemImg">
+                <img src="./img/productDetails-goods.png" alt="">
+            </div>
+            <div class="itemShadow">
+                <img src="./img/productDetails-shadow.png" alt="">
+            </div>
+        </div>
+        <div class="introduce">
+            <div class="color">
+                <div class="color-item">
+                    <div class="img">
+                        <img class="out" src="./img/cirGray.svg" alt="">
+                        <img class="in" src="./img/gray.svg" alt="">
+                    </div>
+                    <p class="colorText">闪耀灰</p>
+                </div>
+                <div class="color-item">
+                    <div class="img">
+                        <img class="in" src="./img/orange.svg" alt="">
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="img">
+                        <img class="in" src="./img/yellow.svg" alt="">
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="img">
+                        <img class="in" src="./img/blue.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+                <div class="name">索尼CH702</div>
+                <div class="counts">
+                    <div class="add">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12rem"
+                            height="12rem" viewBox="0 0 11 11" fill="none">
+                            <path fill="rgba(255, 109, 111, 1)"
+                                d="M0.69 4.81C0.310304 4.81 0 5.1203 0 5.5C0 5.8797 0.310304 6.19 0.69 6.19L4.81 6.19L4.81 10.31C4.81 10.6897 5.1203 11 5.5 11C5.8797 11 6.19 10.6897 6.19 10.31L6.19 6.19L10.31 6.19C10.6897 6.19 11 5.8797 11 5.5C11 5.1203 10.6897 4.81 10.31 4.81L6.19 4.81L6.19 0.69C6.19 0.310304 5.8797 0 5.5 0C5.1203 0 4.81 0.310304 4.81 0.69L4.81 4.81L0.69 4.81">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="count">01</div>
+                    <div class="sub">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12rem"
+                            height="1.5rem" viewBox="0 0 11 1.3800048828125" fill="none">
+                            <path fill="rgba(255, 109, 111, 1)"
+                                d="M0 0.69C0 1.0697 0.310304 1.38 0.69 1.38L10.31 1.38C10.6897 1.38 11 1.0697 11 0.69C11 0.310304 10.6897 0 10.31 0L0.69 0C0.310304 0 0 0.310304 0 0.69">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="classify">高保真头戴式耳机</div>
+            <div class="description">
+                契合人体工学的轻量化设计，不给双耳增添多余负担.利用先进
+                的算法，带来对音源采样率的补全，恢复部分损失的高频声音，
+                提升音质，展现接近原始的声音音效。
+            </div>
+            <div class="address">
+                <div class="address-img">
+                    <img src="./img/address.svg" alt="">
+                </div>
+                <div class="address-text">
+                    <div class="at-left">
+                        <div class="citys">
+                            <p class="city">广州</p>
+                            <p class="fee">快递：免运费</p>
+                        </div>
+                        <p class="detailed">配送至：广州市 白云区 金山街道</p>
+                        <p class="time">现货，付款后48小时内发货</p>
+                    </div>
+                    <div class="at-right">
+                        <img src="./img/to.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="options">
+                <div class="options-img">
+                    <img src="./img/options.svg" alt="">
+                </div>
+                <div class="options-text">
+                    <div class="ot-left">品牌.型号.耳机材质.颜色分类</div>
+                    <div class="ot-right">
+                        <img src="./img/to.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="cope">
+                    <div class="money">499</div>
+                    <div class="copeText">应付总额</div>
+                </div>
+                <div class="btn">
+                    <div class="return-cart">
+                        <img src="./img/cart.svg" alt="">
+                    </div>
+                    <div class="return-home">立即购买</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/adapt.js"></script>
+
+</html>

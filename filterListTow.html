@@ -9,183 +9,202 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
 
         html,
         body {
+            font-size: 1px;
             height: 100%;
-            ;
-        }
-
-        body {
-            background-color: rgba(245, 245, 245, 1);
         }
 
         .container {
-            width: 375px;
+            width: 375rem;
             height: 100%;
-            overflow-x: hidden;
+            /* overflow-x: hidden; */
             background-color: rgba(245, 245, 245, 1);
+
+            display: flex;
+            flex-direction: column;
+
+            margin: 0 auto;
         }
 
         /* 顶部区域 */
         .header {
-            height: 50px;
-            /* background-color: pink; */
-            position: relative;
+            width: 335rem;
+            min-height: 50rem;
+            /* position: relative; */
+
+            padding: 20rem 20rem 6rem 20rem;
             background-color: rgba(255, 255, 255, 1);
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
         }
 
-        .header h2 {
-            font-size: 18px;
-            font-weight: 500;
+        .header .text {
+            font-size: 18rem;
             color: rgba(255, 108, 114, 1);
-            text-align: center;
-            line-height: 50px;
         }
 
         .header .img {
-            width: 38px;
-            height: 38px;
+            width: 38rem;
+            height: 38rem;
 
-            border-radius: 8px;
+            border-radius: 8rem;
             background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0px 3px 6px rgba(115, 6, 6, 0.2), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
-            backdrop-filter: blur(10px);
+            box-shadow: 0rem 3rem 6rem rgba(115, 6, 6, 0.2), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10rem);
 
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .header .imgLeft {
-            position: absolute;
-            left: 17px;
-            top: 5px;
+        .header .img img {
+            width: 22rem;
+            height: 22rem;
         }
-
-        .header .imgRight {
-            position: absolute;
-            right: 17px;
-            top: 5px;
-        }
-
 
         /* 标题区域 */
         .labels {
-            height: 40px;
-            /* background-color: blue; */
+            min-height: 40rem;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
             background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0px 3px 6px rgba(97, 23, 8, 0.2), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
-            backdrop-filter: blur(10px);
+            box-shadow: 0rem 3rem 6rem rgba(97, 23, 8, 0.2), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10rem);
+
         }
 
         .labels .labels-title {
-            padding: 0 24px;
+            padding: 0 23rem;
         }
 
         .labels .labels-title span {
-            padding: 7px 0;
+            padding: 7rem 0;
             color: rgba(102, 102, 102, 1);
             font-weight: 400;
-            font-size: 14px;
+            font-size: 14rem;
         }
 
         .labels .labels-title .image {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 16px;
-            height: 16px;
-            margin-top: 4px;
+            width: 16rem;
+            height: 16rem;
+            margin-top: 4rem;
         }
 
         .labels .labels-title .image img {
-            width: 16px;
-            height: 16px;
+            width: 16rem;
+            height: 16rem;
         }
 
         .labels .labels-title .active {
-            border-bottom: 2px solid red;
+            border-bottom: 2rem solid red;
             color: rgba(0, 0, 0, 1);
+        }
+
+        .labels .lb-price {
+            display: flex;
+            align-items: center;
+        }
+
+        .labels .lb-price .triangle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 2rem 0 0 5rem;
+            height: 16rem;
+            width: 7rem;
         }
 
         /* 商品区域 */
         .goods {
-            width: 375px;
-            height: 1000px;
+            width: 375rem;
+            /* height: 1000rem; */
 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            flex-grow: 1;
+            overflow-x: scroll;
+            scrollbar-width: none;
         }
 
         .goods-item {
-            width: 165px;
-            height: 215px;
+            width: 165rem;
+            height: 220rem;
 
-            display: flex;
-            flex-direction: column;
-
-            border-radius: 10px;
+            border-radius: 10rem;
             background: rgba(255, 255, 255, 1);
-            box-shadow: 0px 4px 8px rgba(97, 23, 8, 0.3);
+            box-shadow: 0rem 4rem 8rem rgba(97, 23, 8, 0.3);
 
-            float: left;
-            margin: 10px 11px;
+            margin: 10rem 11rem;
         }
 
         .goods-item .img {
-            width: 144px;
-            height: 144px;
+            width: 144rem;
+            height: 144rem;
 
             margin: 0 auto;
 
-            border-bottom: 1px solid rgba(153, 153, 153, 0.5);
+            border-bottom: 1rem solid rgba(153, 153, 153, 0.5);
         }
 
         .goods-item .img img {
-            width: 144px;
-            height: 144px;
+            width: 144rem;
+            height: 144rem;
         }
 
         .goods-item .title {
             color: rgba(51, 51, 51, 1);
-            font-size: 14px;
+            font-size: 14rem;
             font-weight: 600;
 
-            padding: 7px 9px 4px 9px;
+            padding: 7rem 9rem 4rem 9rem;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
 
         .bottom {
+            width: 155rem;
             display: flex;
+            justify-content: space-between;
         }
 
         .price .nowPrice {
-            font-size: 18px;
-            padding-left: 9px;
+            font-size: 18rem;
+            padding-left: 9rem;
 
             color: rgba(255, 108, 114, 1);
         }
 
         .price .nowPrice::before {
             content: "¥";
-            font-size: 12px;
+            font-size: 12rem;
         }
 
         .price .nowPrice::after {
             content: "起";
-            font-size: 14px;
+            font-size: 14rem;
         }
 
         .price .oldPrice {
-            font-size: 14px;
-            padding-left: 4px;
+            font-size: 10rem;
+            padding-left: 4rem;
             color: rgba(153, 153, 153, 1);
             text-decoration: line-through;
         }
@@ -196,30 +215,34 @@
 
         .Seller {
             display: flex;
-            padding: 5px 0 0 9px;
+            padding: 5rem 0 0 9rem;
         }
 
         .Seller p {
             color: rgba(153, 153, 153, 1);
-            font-size: 8px;
+            font-size: 8rem;
         }
 
         .Seller img {
-            padding-right: 2px;
+            padding-right: 2rem;
+            width: 10rem;
         }
 
         .cart {
-            width: 38px;
-            height: 38px;
+            width: 38rem;
+            height: 38rem;
             border-radius: 50%;
             background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%), rgba(204, 204, 204, 1);
-            box-shadow: 0px 2px 4px rgba(97, 23, 8, 0.3), inset -0.6px -0.6px 0px rgba(255, 255, 255, 1), inset 0.6px 0.6px 0px rgba(255, 255, 255, 1);
+            box-shadow: 0rem 2rem 4rem rgba(97, 23, 8, 0.3), inset -0.6rem -0.6rem 0rem rgba(255, 255, 255, 1), inset 0.6rem 0.6rem 0rem rgba(255, 255, 255, 1);
 
             display: flex;
             justify-content: center;
             align-items: center;
+        }
 
-            margin-left: 10px;
+        .cart img {
+            width: 26rem;
+            height: 26rem;
         }
     </style>
 </head>
@@ -227,13 +250,13 @@
 <body>
     <div class="container">
         <!-- 顶部区域 -->
-        <div class=" header">
-            <h2>耳机</h2>
+        <div class="header">
             <div class="img imgLeft">
                 <img src="./img/more.svg" alt="">
             </div>
+            <p class="text">耳机</p>
             <div class="img imgRight">
-                <img src="./img/search.png" alt="">
+                <img src="./img/search2.svg" alt="">
             </div>
         </div>
 
@@ -248,8 +271,12 @@
             <div class="labels-title">
                 <span>品牌</span>
             </div>
-            <div class="labels-title">
+            <div class="labels-title lb-price">
                 <span>价格</span>
+                <div class="triangle">
+                    <img src="img/triangleDown.svg" alt="">
+                    <img src="img/triangleUp.svg" alt="">
+                </div>
             </div>
             <div class="labels-title">
                 <span class="image"><img src="./img/sift.svg" alt=""></span>
@@ -259,7 +286,51 @@
         <div class="goods">
             <div class="goods-item">
                 <div class="img">
-                    <img src="./img/earphone.svg" alt="">
+                    <img src="./img/earphone3.png" alt="">
+                </div>
+                <p class="title">漫步者/HECAT</p>
+                <div class="bottom">
+                    <div class="left">
+                        <div class="price">
+                            <span class="nowPrice">114</span>
+                            <span class="oldPrice">299</span>
+                        </div>
+                        <div class="Seller">
+                            <p>发货方：</p>
+                            <img src="./img/USA.svg" alt="">
+                            <p>美国亚马逊</p>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <img src="./img/cart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="goods-item">
+                <div class="img">
+                    <img src="./img/earphone9.png" alt="">
+                </div>
+                <p class="title">索尼CH702</p>
+                <div class="bottom">
+                    <div class="left">
+                        <div class="price">
+                            <span class="nowPrice">499</span>
+                            <span class="oldPrice">599</span>
+                        </div>
+                        <div class="Seller">
+                            <p>发货方：</p>
+                            <img src="./img/USA.svg" alt="">
+                            <p>美国亚马逊</p>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <img src="./img/cart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="goods-item">
+                <div class="img">
+                    <img src="./img/earphone7.png" alt="">
                 </div>
                 <p class="title">索尼LC9200</p>
                 <div class="bottom">
@@ -281,7 +352,73 @@
             </div>
             <div class="goods-item">
                 <div class="img">
-                    <img src="./img/earphone.svg" alt="">
+                    <img src="./img/earphone5.png" alt="">
+                </div>
+                <p class="title">索尼WB82NB</p>
+                <div class="bottom">
+                    <div class="left">
+                        <div class="price">
+                            <span class="nowPrice">599</span>
+                            <span class="oldPrice">699</span>
+                        </div>
+                        <div class="Seller">
+                            <p>发货方：</p>
+                            <img src="./img/USA.svg" alt="">
+                            <p>美国亚马逊</p>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <img src="./img/cart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="goods-item">
+                <div class="img">
+                    <img src="./img/earphone8.png" alt="">
+                </div>
+                <p class="title">漫步者EDIFIER W8......</p>
+                <div class="bottom">
+                    <div class="left">
+                        <div class="price">
+                            <span class="nowPrice">1199</span>
+                            <span class="oldPrice">599</span>
+                        </div>
+                        <div class="Seller">
+                            <p>发货方：</p>
+                            <img src="./img/USA.svg" alt="">
+                            <p>美国亚马逊</p>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <img src="./img/cart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="goods-item">
+                <div class="img">
+                    <img src="./img/earphone6.png" alt="">
+                </div>
+                <p class="title">IKF T1头戴式耳机</p>
+                <div class="bottom">
+                    <div class="left">
+                        <div class="price">
+                            <span class="nowPrice">699</span>
+                            <span class="oldPrice">799</span>
+                        </div>
+                        <div class="Seller">
+                            <p>发货方：</p>
+                            <img src="./img/USA.svg" alt="">
+                            <p>美国亚马逊</p>
+                        </div>
+                    </div>
+                    <div class="cart">
+                        <img src="./img/cart.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="goods-item">
+                <div class="img">
+                    <img src="./img/earphone7.png" alt="">
                 </div>
                 <p class="title">索尼LC9200</p>
                 <div class="bottom">
@@ -303,103 +440,14 @@
             </div>
             <div class="goods-item">
                 <div class="img">
-                    <img src="./img/earphone.svg" alt="">
+                    <img src="./img/earphone9.png" alt="">
                 </div>
-                <p class="title">索尼LC9200</p>
+                <p class="title">索尼CH702</p>
                 <div class="bottom">
                     <div class="left">
                         <div class="price">
-                            <span class="nowPrice">699</span>
-                            <span class="oldPrice">799</span>
-                        </div>
-                        <div class="Seller">
-                            <p>发货方：</p>
-                            <img src="./img/USA.svg" alt="">
-                            <p>美国亚马逊</p>
-                        </div>
-                    </div>
-                    <div class="cart">
-                        <img src="./img/cart.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="goods-item">
-                <div class="img">
-                    <img src="./img/earphone.svg" alt="">
-                </div>
-                <p class="title">索尼LC9200</p>
-                <div class="bottom">
-                    <div class="left">
-                        <div class="price">
-                            <span class="nowPrice">699</span>
-                            <span class="oldPrice">799</span>
-                        </div>
-                        <div class="Seller">
-                            <p>发货方：</p>
-                            <img src="./img/USA.svg" alt="">
-                            <p>美国亚马逊</p>
-                        </div>
-                    </div>
-                    <div class="cart">
-                        <img src="./img/cart.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="goods-item">
-                <div class="img">
-                    <img src="./img/earphone.svg" alt="">
-                </div>
-                <p class="title">索尼LC9200</p>
-                <div class="bottom">
-                    <div class="left">
-                        <div class="price">
-                            <span class="nowPrice">699</span>
-                            <span class="oldPrice">799</span>
-                        </div>
-                        <div class="Seller">
-                            <p>发货方：</p>
-                            <img src="./img/USA.svg" alt="">
-                            <p>美国亚马逊</p>
-                        </div>
-                    </div>
-                    <div class="cart">
-                        <img src="./img/cart.svg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="goods-item">
-                <div class="img">
-                    <img src="./img/earphone.svg" alt="">
-                </div>
-                <p class="title">索尼LC9200</p>
-                <div class="bottom">
-                    <div class="left">
-                        <div class="price">
-                            <span class="nowPrice">699</span>
-                            <span class="oldPrice">799</span>
-                        </div>
-                        <div class="Seller">
-                            <p>发货方：</p>
-                            <img src="./img/USA.svg" alt="">
-                            <p>美国亚马逊</p>
-                        </div>
-                    </div>
-                    <div class="cart">
-                        <img src="./img/cart.svg" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <div class="goods-item">
-                <div class="img">
-                    <img src="./img/earphone.svg" alt="">
-                </div>
-                <p class="title">索尼LC9200</p>
-                <div class="bottom">
-                    <div class="left">
-                        <div class="price">
-                            <span class="nowPrice">699</span>
-                            <span class="oldPrice">799</span>
+                            <span class="nowPrice">499</span>
+                            <span class="oldPrice">599</span>
                         </div>
                         <div class="Seller">
                             <p>发货方：</p>
@@ -415,5 +463,6 @@
         </div>
     </div>
 </body>
+<script src="js/adapt.js"></script>
 
 </html>

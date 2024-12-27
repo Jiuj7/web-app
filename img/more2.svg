@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="4" height="22" viewBox="0 0 4 22" fill="none">
+<circle cx="2" cy="2" r="2"   fill="url(#linear_fill_aiVAhebHrOATYd7VYBjGM)" >
+</circle>
+<circle cx="2" cy="11" r="2"   fill="url(#linear_fill_-OWfEmAH3Sq6dvl_-N2p1)" >
+</circle>
+<circle cx="2" cy="20" r="2"   fill="url(#linear_fill_yvhlH2Eq6zJQCT8ftROwJ)" >
+</circle>
+<defs>
+<linearGradient id="linear_fill_aiVAhebHrOATYd7VYBjGM" x1="2.0024" y1="3.48608" x2="2.0024" y2="0" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#FF6C72"  />
+<stop offset="1" stop-color="#FF8343"  />
+</linearGradient>
+<linearGradient id="linear_fill_-OWfEmAH3Sq6dvl_-N2p1" x1="2.0024" y1="12.48608" x2="2.0024" y2="9" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#FF6C72"  />
+<stop offset="1" stop-color="#FF8343"  />
+</linearGradient>
+<linearGradient id="linear_fill_yvhlH2Eq6zJQCT8ftROwJ" x1="2.0024" y1="21.48608" x2="2.0024" y2="18" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#FF6C72"  />
+<stop offset="1" stop-color="#FF8343"  />
+</linearGradient>
+</defs>
+</svg>

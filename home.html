@@ -9,35 +9,39 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
-        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
         body,
         html {
+            font-size: 1px;
             height: 100%;
         }
 
-
-        body {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
-            /* background-color: rgba(245, 245, 245, 1); */
-        }
-
         .container {
-            width: 375px;
-            /* height: 1000px; */
+            width: 375rem;
+            height: 100%;
+
+            background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(245, 245, 245, 1) 100%);
+
             position: relative;
             overflow: hidden;
 
+            display: flex;
+            flex-direction: column;
+
+            margin: 0 auto;
         }
 
         .head {
-            width: 320px;
-            height: 50px;
-            /* background-color: #f5f5f5; */
+            width: 320rem;
+            height: 50rem;
 
-            margin: 0 auto;
+            margin: 35rem auto 10rem auto;
 
             display: flex;
             justify-content: space-between;
@@ -45,16 +49,16 @@
         }
 
         .head img {
-            width: 24px;
+            width: 24rem;
         }
 
         .head .search {
-            width: 160px;
-            height: 50px;
+            width: 160rem;
+            height: 50rem;
 
-            border-radius: 288px;
+            border-radius: 288rem;
             background: linear-gradient(133.51deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 69, 1) 100%);
-            box-shadow: -5px -5px 10px rgba(255, 255, 255, 1), 5px 5px 10px rgba(161, 3, 8, 0.3), inset -1.3px -1.3px 0px rgba(255, 255, 255, 1), inset 1.3px 1.3px 0px rgba(255, 255, 255, 1);
+            box-shadow: -5rem -5rem 10rem rgba(255, 255, 255, 1), 5rem 5rem 10rem rgba(161, 3, 8, 0.3), inset -1.3rem -1.3rem 0rem rgba(255, 255, 255, 1), inset 1.3rem 1.3rem 0rem rgba(255, 255, 255, 1);
 
             display: flex;
             justify-content: center;
@@ -63,156 +67,185 @@
         }
 
         .searchImg {
-            width: 38px;
-            height: 38px;
+            width: 38rem;
+            height: 38rem;
 
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.3);
-            box-shadow: -1.5px -1.5px 3px rgba(255, 255, 255, 0.2), 1.5px 1.5px 2px rgba(161, 3, 8, 0.3), inset -0.6px -0.6px 0px rgba(255, 255, 255, 1), inset 0.6px 0.6px 0px rgba(255, 255, 255, 1);
-            backdrop-filter: blur(10px);
+            box-shadow: -1.5rem -1.5rem 3rem rgba(255, 255, 255, 0.2), 1.5rem 1.5rem 2rem rgba(161, 3, 8, 0.3), inset -0.6rem -0.6rem 0rem rgba(255, 255, 255, 1), inset 0.6rem 0.6rem 0rem rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10rem);
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            margin-right: 6px;
+            margin-right: 6rem;
         }
 
         .searchImg img {
-            width: 16px;
+            width: 16rem;
             color: rgba(255, 255, 255, 0.8);
         }
 
         .searchBox {
-            width: 90px;
-            height: 30px;
+            width: 90rem;
+            height: 30rem;
 
-            font-size: 10px;
+            font-size: 10rem;
             color: rgba(255, 255, 255, 0.8);
 
             border: none;
             outline: none;
             background: linear-gradient(133.51deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 69, 1) 100%);
 
-            margin-right: 10px;
+            margin-right: 10rem;
         }
 
         .searchBox::placeholder {
             color: rgba(255, 255, 255, 0.8);
         }
 
+        .content {
+            width: 375rem;
+            height: 100rem;
+
+            flex-grow: 1;
+            overflow-y: scroll;
+            scrollbar-width: none;
+
+        }
+
         .title {
-            width: 320px;
-            font-family: 站酷庆科黄油体;
+            width: 320rem;
             color: rgba(255, 108, 114, 1);
 
-            margin: 20px auto;
+            margin: 10rem auto;
         }
 
         .title .title1 {
-            font-size: 20px;
+            font-size: 20rem;
         }
 
         .title .title2 {
-            font-size: 24px;
+            font-size: 24rem;
         }
 
         .title .title3 {
-            font-size: 12px;
+            font-size: 12rem;
         }
 
         .menu {
-            width: 1000px;
-            height: 75px;
+            width: 100%;
+            height: 95rem;
 
             display: flex;
             flex-direction: row;
             align-items: center;
 
+            overflow-x: scroll;
+            scrollbar-width: none;
         }
 
         .menu-item {
-            width: 60px;
-            height: 60px;
+            min-width: 60rem;
+            height: 60rem;
 
-            border-radius: 12px;
+            border-radius: 12rem;
             background: rgba(219, 105, 109, 0.1);
-            box-shadow: inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
+            box-shadow: inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            margin-left: 15px;
+            margin-left: 14rem;
+        }
+
+        .menu-item img {
+            width: 24rem;
+            height: 24rem;
+        }
+
+        .menu-item:nth-child(1) {
+            margin-left: 25rem;
         }
 
         .menu .active {
-            width: 60px;
-            height: 75px;
+            height: 75rem;
 
-            border-radius: 16px;
+            border-radius: 16rem;
             background: linear-gradient(135deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 69, 1) 100%);
-            box-shadow: -3px -3px 6px rgba(255, 255, 255, 1), 0px 5px 10px rgba(161, 3, 8, 0.3), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
+            box-shadow: -3rem -3rem 6rem rgba(255, 255, 255, 1), 0rem 5rem 10rem rgba(161, 3, 8, 0.3), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
         }
 
         .menu .active p {
-            width: 32px;
-            height: 38px;
+            width: 32rem;
+            height: 38rem;
 
-            font-size: 16px;
+            font-size: 16rem;
             font-weight: 500;
             color: rgba(255, 255, 255, 1);
         }
 
         .banner {
-            width: 375px;
-            /* height: 280px; */
-
-            /* background-color: aqua; */
+            width: 375rem;
+            /* height: 280rem; */
         }
 
         .banner-item {
-            width: 203px;
-            height: 220px;
+            width: 203rem;
+            height: 220rem;
 
-            /* background-color: pink; */
             background-image: url("img/banner-item-bg.png");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position: 0 0;
+
             position: relative;
-            margin: 40px auto 0 auto;
+            margin: 40rem auto 25rem auto;
+
+
         }
 
         .banner-item .itemImg {
-            width: 144px;
-            height: 144px;
+            width: 279rem;
+            height: 174rem;
 
             margin: 0 auto;
 
             position: absolute;
-            left: -35px;
-            top: -50px;
+            left: -35rem;
+            top: -50rem;
+        }
+
+        .banner-item .itemImg img {
+            width: 279rem;
+            height: 174rem;
         }
 
         .banner-item .itemShadow {
-            width: 107px;
-            height: 17px;
+            width: 107rem;
+            height: 17rem;
 
             position: absolute;
-            left: 28px;
-            top: 65px;
+            left: 28rem;
+            top: 65rem;
+        }
+
+        .banner-item .itemShadow img {
+            width: 147rem;
+            height: 57rem;
         }
 
 
         .banner-item .itemTitle {
             color: rgba(255, 255, 255, 1);
-            font-size: 16px;
+            font-size: 16rem;
             font-weight: 500;
 
-            margin-left: 28px;
-            padding-top: 115px;
-            padding-bottom: 7px;
+            margin-left: 28rem;
+            padding-top: 115rem;
+            padding-bottom: 7rem;
         }
 
         .bottom {
@@ -221,192 +254,213 @@
         }
 
         .left .price {
-            font-size: 20px;
+            font-size: 20rem;
             font-weight: 700;
             color: rgba(255, 255, 255, 1);
 
-            margin-left: 26px;
-            padding-bottom: 7px;
+            margin-left: 26rem;
+            padding-bottom: 7rem;
         }
 
         .left .ranking {
             display: flex;
-            margin-left: 23px;
+            margin-left: 23rem;
         }
 
         .left .ranking .ranking-item {
-            width: 49px;
-            height: 16px;
+            width: 49rem;
+            height: 16rem;
 
-            line-height: 16px;
+            line-height: 16rem;
             text-align: center;
-            font-size: 7px;
+            font-size: 7rem;
             color: rgba(255, 255, 255, 1);
 
-            border-radius: 4px;
-            border: 0.5px solid rgba(255, 255, 255, 1);
+            border-radius: 4rem;
+            border: 0.5rem solid rgba(255, 255, 255, 1);
 
-            margin-left: 5px;
+            margin-left: 5rem;
         }
 
         .cart {
-            width: 38px;
-            height: 38px;
+            width: 38rem;
+            height: 38rem;
             background: rgba(255, 255, 255, 0.3);
-            box-shadow: -1.5px -1.5px 3px rgba(255, 255, 255, 0.2), 1.5px 1.5px 3px rgba(161, 3, 8, 0.3), inset -0.6px -0.6px 0px rgba(255, 255, 255, 1), inset 0.6px 0.6px 0px rgba(255, 255, 255, 1);
-            backdrop-filter: blur(10px);
+            box-shadow: -1.5rem -1.5rem 3rem rgba(255, 255, 255, 0.2), 1.5rem 1.5rem 3rem rgba(161, 3, 8, 0.3), inset -0.6rem -0.6rem 0rem rgba(255, 255, 255, 1), inset 0.6rem 0.6rem 0rem rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10rem);
             border-radius: 50%;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            margin-left: 5px;
+            margin-left: 5rem;
+        }
+
+        .cart img {
+            width: 24rem;
+            height: 24rem;
         }
 
         .goods {
-            width: 375px;
-            /* height: 1000px; */
+            width: 375rem;
 
+            padding-bottom: 90rem;
         }
 
         .goods .goods-item {
-            width: 320px;
-            height: 110px;
+            width: 320rem;
+            height: 110rem;
 
-            border-radius: 20px;
+            border-radius: 20rem;
             background: rgba(255, 255, 255, 1);
-            box-shadow: 0px 6px 12px rgba(161, 3, 8, 0.1);
+            box-shadow: 0rem 6rem 12rem rgba(161, 3, 8, 0.1);
 
             display: flex;
 
-            margin: 0 auto 15px auto;
+            margin: 0 auto 15rem auto;
         }
 
         .goods-item .gi-img {
-            width: 89px;
-            height: 110px;
+            width: 89rem;
+            height: 110rem;
 
             display: flex;
-            justify-content: center;
             align-items: center;
 
-            margin-left: 11px;
+            margin-left: 11rem;
         }
 
         .goods-item .gi-img img {
-            width: 89px;
-            height: 89px;
+            width: 89rem;
+            height: 89rem;
+        }
+
+        .gi-right {
+            width: 190rem;
+            margin-left: 11rem;
+
         }
 
         .right-title {
-            font-size: 16px;
+            width: 190rem;
+            font-size: 16rem;
 
-            margin-top: 15px;
+            margin-top: 15rem;
         }
 
         .right-description {
-            width: 196px;
+            width: 190rem;
 
-            letter-spacing: 1px;
-            font-size: 10px;
+            letter-spacing: 1rem;
+            font-size: 10rem;
             color: rgba(153, 153, 153, 1);
 
-            margin-top: 7px;
+            margin-top: 7rem;
         }
 
-        .right-bottom{
+        .right-bottom {
             display: flex;
             align-items: center;
+            justify-content: space-between;
 
-            margin-top: 2px;
+            margin-top: 2rem;
         }
+
         .right-bottom .rb-price {
-            font-size: 20px;
+            width: 89rem;
+            font-size: 20rem;
             color: rgba(255, 108, 114, 1);
         }
 
         .right-bottom .rb-price::before {
             content: "￥";
-            font-size: 14px;
+            font-size: 14rem;
         }
 
         .right-bottom .rb-price::after {
             content: "RMB";
-            font-size: 14px;
-        }
-        .right-bottom .rb-buy{
-        width: 81px;
-        height: 30px;
-
-        border-radius: 270px;
-        background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
-        box-shadow: -2px -2px 4px rgba(255, 255, 255, 1),
-        2px 2px 4px rgba(161, 3, 8, 0.2),
-        inset -0.6px -0.6px 0px rgba(255, 255, 255, 1),
-        inset 0.6px 0.6px 0px rgba(255, 255, 255, 1);
-
-        color: rgba(255, 255, 255, 1);
-        font-size: 14px;
-        line-height: 28px;
-        text-align: center;
-
-        margin-left: 21px;
+            font-size: 14rem;
         }
 
-        
+        .right-bottom .rb-buy {
+            width: 81rem;
+            height: 30rem;
+
+            border-radius: 270rem;
+            background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+            box-shadow: -2rem -2rem 4rem rgba(255, 255, 255, 1),
+                2rem 2rem 4rem rgba(161, 3, 8, 0.2),
+                inset -0.6rem -0.6rem 0rem rgba(255, 255, 255, 1),
+                inset 0.6rem 0.6rem 0rem rgba(255, 255, 255, 1);
+
+            color: rgba(255, 255, 255, 1);
+            font-size: 14rem;
+            line-height: 28rem;
+            text-align: center;
+        }
+
+
         /* 底部导航栏 */
         .bottom-nav {
-            width: 375px;
-            height: 104px;
-            /* background-color: bisque; */
-
-            position: fixed;
-            bottom: 0;
-            left: 0;
+            width: 375rem;
+            height: 77rem;
 
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: end;
 
-            background-image: url("./img/bNavBg.png");
-            background-position: -30px 17px;
+            background-image: url("./img/navBg.png");
+            background-position: 0 0;
+            background-size: 100% 100%;
             background-repeat: no-repeat;
+
+            position: fixed;
+            bottom: 0;
+
+            padding: 0 15rem;
+            box-sizing: border-box;
         }
 
         .bottom-nav .item {
-            width: 52px;
-            height: 52px;
+            width: 52rem;
+            height: 52rem;
 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-bottom: 5px;
+            margin: 10rem 0;
         }
 
         .bottom-nav .item img {
-            width: 22px;
-            height: 22px;
+            width: 24rem;
+            height: 22rem;
         }
 
         .bottom-nav .item span {
-            font-size: 14px;
-            margin-top: 4px;
+            font-size: 14rem;
+            margin-top: 4rem;
             color: rgba(255, 255, 255, 0.6);
         }
 
         .bottom-nav .item-center {
-            width: 70px;
-            height: 70px;
+            width: 60rem;
+            height: 60rem;
             border-radius: 50%;
 
-            background-image: url("./img/bNavCircle.png");
-            background-size: 70px 70px;
+            opacity: 1;
+            background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+            box-shadow: -2rem -2rem 4rem rgba(255, 255, 255, 1), 2rem 2rem 4rem rgba(161, 3, 8, 0.3), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
 
             position: relative;
-            top: -35px;
+            top: -28rem;
+        }
+
+        .bottom-nav .item-center img {
+            width: 30rem;
+            height: 30rem;
         }
     </style>
 </head>
@@ -423,130 +477,174 @@
             </div>
         </div>
 
-        <div class="title">
-            <p class="title1">独特风格</p>
-            <p class="title2">首页产品中心</p>
-            <p class="title3">Unique Style Home Product</p>
-        </div>
+        <div class="content">
+            <div class="title">
+                <p class="title1">独特风格</p>
+                <p class="title2">首页产品中心</p>
+                <p class="title3">Unique Style Home Product</p>
+            </div>
 
-        <div class="menu">
-            <div class="menu-item active">
-                <p>智能推荐</p>
+            <div class="menu">
+                <div class="menu-item active">
+                    <p>智能推荐</p>
+                </div>
+                <div class="menu-item">
+                    <img src="./img/earphone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/phone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/drone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/cpu.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/earphone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/earphone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/earphone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/earphone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/earphone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/earphone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/earphone2.svg" alt="">
+                </div>
+                <div class="menu-item">
+                    <img src="./img/earphone2.svg" alt="">
+                </div>
             </div>
-            <div class="menu-item">
-                <img src="./img/earphone2.svg" alt="">
-            </div>
-            <div class="menu-item">
-                <img src="./img/earphone2.svg" alt="">
-            </div>
-            <div class="menu-item">
-                <img src="./img/earphone2.svg" alt="">
-            </div>
-            <div class="menu-item">
-                <img src="./img/earphone2.svg" alt="">
-            </div>
-            <div class="menu-item">
-                <img src="./img/earphone2.svg" alt="">
-            </div>
-            <div class="menu-item">
-                <img src="./img/earphone2.svg" alt="">
-            </div>
-            <div class="menu-item">
-                <img src="./img/earphone2.svg" alt="">
-            </div>
-            <div class="menu-item">
-                <img src="./img/earphone2.svg" alt="">
-            </div>
-        </div>
 
-        <div class="banner">
-            <div class="banner-item">
-                <div class="itemImg">
-                    <img src="./img/banner-item-goods.png" alt="">
-                </div>
-                <div class="itemShadow">
-                    <img src="./img/banner-shadow.png" alt="">
-                </div>
-                <p class="itemTitle">索尼高保真耳机</p>
-                <div class="bottom">
-                    <div class="left">
-                        <div class="price">
-                            ￥1145.14
+            <div class="banner">
+                <div class="banner-item">
+                    <div class="itemImg">
+                        <img src="./img/banner-item-goods.png" alt="">
+                    </div>
+                    <div class="itemShadow">
+                        <img src="./img/banner-shadow.png" alt="">
+                    </div>
+                    <p class="itemTitle">索尼高保真耳机</p>
+                    <div class="bottom">
+                        <div class="left">
+                            <div class="price">
+                                ￥1145.14
+                            </div>
+                            <div class="ranking">
+                                <div class="ranking-item">热销榜NO.11</div>
+                                <div class="ranking-item">好评率NO.1</div>
+                            </div>
                         </div>
-                        <div class="ranking">
-                            <div class="ranking-item">热销榜NO.11</div>
-                            <div class="ranking-item">好评率NO.1</div>
+                        <div class="cart">
+                            <img src="./img/cart.svg" alt="">
                         </div>
                     </div>
-                    <div class="cart">
-                        <img src="./img/cart.svg" alt="">
+                </div>
+            </div>
+
+            <div class="goods">
+                <div class="goods-item">
+                    <div class="gi-img">
+                        <img src="./img/earphone5.png" alt="">
+                    </div>
+                    <div class="gi-right">
+                        <div class="right-title">
+                            索尼WB82NB
+                        </div>
+                        <div class="right-description">
+                            契合人体工学的轻量化设计，不给双耳增添多余负担.
+                        </div>
+                        <div class="right-bottom">
+                            <span class="rb-price">599</span>
+                            <div class="rb-buy">立即购买</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <div class="gi-img">
+                        <img src="./img/earphone9.png" alt="">
+                    </div>
+                    <div class="gi-right">
+                        <div class="right-title">
+                            索尼CH702
+                        </div>
+                        <div class="right-description">
+                            契合人体工学的轻量化设计，不给双耳增添多余负担.
+                        </div>
+                        <div class="right-bottom">
+                            <span class="rb-price">499</span>
+                            <div class="rb-buy">立即购买</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="goods-item">
+                    <div class="gi-img">
+                        <img src="./img/earphone.svg" alt="">
+                    </div>
+                    <div class="gi-right">
+                        <div class="right-title">
+                            索尼/W820NB
+                        </div>
+                        <div class="right-description">
+                            契合人体工学的轻量化设计，不给双耳增添多余负担.
+                        </div>
+                        <div class="right-bottom">
+                            <span class="rb-price">114.5</span>
+                            <div class="rb-buy">立即购买</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="goods">
-            <div class="goods-item">
-                <div class="gi-img">
-                    <img src="./img/earphone.svg" alt="">
-                </div>
-                <div class="gi-right">
-                    <div class="right-title">
-                        索尼/W820NB
-                    </div>
-                    <div class="right-description">
-                        契合人体工学的轻量化设计，不给双耳增添多余负担.
-                    </div>
-                    <div class="right-bottom">
-                        <span class="rb-price">114.5</span>
-                        <div class="rb-buy">立即购买</div>
-                    </div>
-                </div>
-            </div>
-            <div class="goods-item">
-                <div class="gi-img">
-                    <img src="./img/earphone.svg" alt="">
-                </div>
-                <div class="gi-right">
-                    <div class="right-title">
-                        索尼/W820NB
-                    </div>
-                    <div class="right-description">
-                        契合人体工学的轻量化设计，不给双耳增添多余负担.
-                    </div>
-                    <div class="right-bottom">
-                        <span class="rb-price">114.5</span>
-                        <div class="rb-buy">立即购买</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
         <!-- 底部导航栏 -->
         <div class="bottom-nav">
             <div class="item">
-                <img src="./img/home.png" alt="">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24rem"
+                    height="24rem" viewBox="0 0 24 24.07275390625" fill="#ffffff">
+                    <path
+                        d="M13.1816 1.3802L21.6725 7.47449C22.5057 8.07253 22.9999 9.0353 23 10.0609L23 19.8886C23 21.6471 21.5743 23.0728 19.8158 23.0728L15.4737 23.0728L15.4737 18.4412C15.4737 16.5229 13.9183 14.9675 12 14.9675C10.0817 14.9675 8.52632 16.5229 8.52632 18.4412L8.52632 23.0728L4.18421 23.0728C2.42566 23.0728 1 21.6471 1 19.8886L1 10.0612C1.00004 9.03549 1.49421 8.07258 2.32753 7.47449L10.8184 1.3802C11.5246 0.873267 12.4754 0.873267 13.1816 1.3802Z"
+                        stroke="rgba(255, 255, 255, 0.6)" stroke-width="2">
+                    </path>
+                </svg>
                 <span>首页</span>
             </div>
-            <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>首页</span>
-            </div>
-            <div class="item item-center">
-                <img src="./img/home.png" alt="">
-                <!-- <span>首页</span> -->
-            </div>
-            <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>首页</span>
-            </div>
-            <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>首页</span>
-            </div>
+            <a href="filterListOne.html">
+                <div class="item">
+                    <img src="./img/classify.svg" alt="">
+                    <span>分类</span>
+                </div>
+            </a>
+            <a href="myCart.html">
+                <div class="item item-center">
+                    <img src="./img/cart.svg" alt="">
+                </div>
+            </a>
+            <a href="forum.html">
+                <div class="item">
+                    <img src="./img/forum.svg" alt="">
+                    <span>论坛</span>
+                </div>
+            </a>
+            <a href="mine.html">
+                <div class="item">
+                    <img src="./img/mine.svg" alt="">
+                    <span>我的</span>
+                </div>
+            </a>
         </div>
     </div>
 </body>
+<script src="./js/adapt.js"></script>
 
 </html>

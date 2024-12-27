@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>论坛页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        html,
+        body {
+            font-size: 1px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 375rem;
+            height: 811rem;
+
+            background: rgba(247, 246, 246, 1);
+
+            position: relative;
+
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .head {
+            width: 339rem;
+            height: 26rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin: 23rem auto 0 auto;
+        }
+
+        .head .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .head .logo img {
+            width: 26rem;
+            height: 26rem;
+        }
+
+        .head .logo p {
+            color: rgba(255, 108, 114, 1);
+            font-size: 16rem;
+            text-shadow: 0rem 1.5rem 3rem;
+            margin-left: 7rem;
+        }
+
+        .head .right {
+            width: 101rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .head .right img {
+            width: 17rem;
+            height: 17rem;
+        }
+
+
+        .menu {
+            width: 100%;
+            height: 115rem;
+
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            overflow-x: scroll;
+            scrollbar-width: none;
+        }
+
+        .menu-item {
+            min-width: 216rem;
+            height: 94rem;
+
+            margin-left: 14rem;
+        }
+
+        .menu-item img {
+            min-width: 216rem;
+            height: 94rem;
+        }
+
+
+        /* 标题区域 */
+        .labels {
+            width: 375rem;
+            height: 40rem;
+            flex-shrink: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0rem 3rem 6rem rgba(97, 23, 8, 0.2), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10rem);
+
+        }
+
+        .labels .labels-title {
+            padding: 0 25rem;
+        }
+
+        .labels .labels-title span {
+            padding: 8rem 0;
+            color: rgba(51, 51, 51, 0.6);
+            font-size: 14rem;
+        }
+
+        .labels .labels-title .active {
+            border-bottom: 2rem solid red;
+            color: rgba(51, 51, 51, 1);
+        }
+
+        /* 内容区域 */
+        .content {
+            width: 360rem;
+            margin: 0 auto;
+
+            flex-grow: 1;
+
+            overflow-x: scroll;
+            scrollbar-width: none;
+
+            position: relative;
+            padding-bottom: 200rem;
+        }
+
+        .content-item {
+            width: 360rem;
+            height: 359rem;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .content-item1 {
+            background-image: url('./img/f-cBg1.png');
+        }
+
+        .content-item2 {
+            position: relative;
+            top: -45rem;
+            background-image: url('./img/f-cBg2.png');
+        }
+
+        .content-item2 .ci-header {
+            padding-top: 70rem;
+        }
+
+        .ci-header {
+            width: 305rem;
+            display: flex;
+            justify-content: space-between;
+
+            padding-top: 27rem;
+            margin: 0 auto;
+        }
+
+        .ci-header .left {
+            width: 153rem;
+            height: 48rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ci-header .left .avatar {
+            width: 48rem;
+            height: 48rem;
+            border-radius: 50%;
+        }
+
+        .ci-header .left .name {
+            font-size: 16rem;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .ci-header .left .time {
+            font-size: 12rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .ci-header .right {
+            display: flex;
+            align-items: center;
+        }
+
+        .ci-header .right .support,
+        .reply,
+        .down {
+            width: 24rem;
+            height: 35rem;
+            margin-left: 12rem;
+        }
+
+        .ci-header .right .support .img {
+            width: 15rem;
+            height: 21rem;
+            margin: 0 auto;
+        }
+
+        .ci-header .right .support .img img {
+            width: 15rem;
+            height: 13rem;
+        }
+
+        .ci-header .right .support p,
+        .reply p {
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+
+        .ci-header .right .reply .img {
+            width: 16rem;
+            height: 21rem;
+            margin: 0 auto;
+        }
+
+        .ci-header .right .reply .img img {
+            width: 16rem;
+            height: 14rem;
+        }
+
+        .ci-header .right .down .img {
+            width: 11rem;
+            height: 11rem;
+            margin: 0 auto;
+        }
+
+        .ci-header .right .down .img img {
+            width: 11rem;
+            height: 11rem;
+        }
+
+        .ci-text {
+            width: 305rem;
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 1);
+
+            padding: 7rem 0;
+            margin: 0 auto;
+        }
+
+        .ci-img {
+            width: 320rem;
+            margin: 0 auto;
+        }
+
+        .ci-img img {
+            width: 320rem;
+        }
+
+
+        /* 底部导航栏 */
+        .bottom-nav {
+            width: 375rem;
+            height: 77rem;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: end;
+
+            background-image: url("./img/navBg.png");
+            background-position: 0 0;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+            position: fixed;
+            bottom: 0;
+
+            padding: 0 15rem;
+            box-sizing: border-box;
+        }
+
+        .bottom-nav .item {
+            width: 52rem;
+            height: 52rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10rem 0;
+        }
+
+        .bottom-nav .item img {
+            width: 24rem;
+            height: 22rem;
+        }
+
+        .bottom-nav .item span {
+            font-size: 14rem;
+            margin-top: 4rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .bottom-nav .item-center {
+            width: 60rem;
+            height: 60rem;
+            border-radius: 50%;
+
+            opacity: 1;
+            background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+            box-shadow: -2rem -2rem 4rem rgba(255, 255, 255, 1), 2rem 2rem 4rem rgba(161, 3, 8, 0.3), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
+
+            position: relative;
+            top: -28rem;
+        }
+
+        .bottom-nav .item-center img {
+            width: 30rem;
+            height: 30rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="logo">
+                <img src="./img/logo.svg" alt="">
+                <p>即时购物</p>
+            </div>
+            <div class="right">
+                <img src="./img/add2.svg" alt="">
+                <img src="./img/search2.svg" alt="">
+                <img src="./img/more2.svg" alt="">
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="menu-item">
+                <img src="./img/f-banner1.png" alt="">
+            </div>
+            <div class="menu-item">
+                <img src="./img/f-banner2.png" alt="">
+            </div>
+            <div class="menu-item">
+                <img src="./img/f-banner2.png" alt="">
+            </div>
+        </div>
+
+        <!-- 标题区域 -->
+        <div class="labels">
+            <div class="labels-title">
+                <span class="active">推荐</span>
+            </div>
+            <div class="labels-title">
+                <span>精选晒单</span>
+            </div>
+            <div class="labels-title">
+                <span>交流</span>
+            </div>
+            <div class="labels-title">
+                <span>周边</span>
+            </div>
+        </div>
+        <!-- 内容区域 -->
+        <div class="content">
+            <div class="content-item content-item1">
+                <div class="ci-header">
+                    <div class="left">
+                        <img class="avatar" src="./img/pyy.jpg" alt="">
+                        <div class="nt">
+                            <div class="name">Only KiKi</div>
+                            <div class="time">2023-7-25 11:33</div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="support">
+                            <div class="img">
+                                <img src="./img/start.svg" alt="">
+                            </div>
+                            <p>1145</p>
+                        </div>
+                        <div class="reply">
+                            <div class="img">
+                                <img src="./img/forum.svg" alt="">
+                            </div>
+                            <p>1145</p>
+                        </div>
+                        <div class="down">
+                            <div class="img">
+                                <img src="./img/down.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ci-text">
+                    契合人体工学的轻量化设计，不给双耳增添多余负担.利用先进的算法，带来对音源采样率的补全，恢复部分损失的高频声音，提升音质，展现接近原始的声音音效。
+                </div>
+                <div class="ci-img">
+                    <img src="./img/f-cGoods1.png" alt="">
+                </div>
+            </div>
+            <div class="content-item content-item2">
+                <div class="ci-header">
+                    <div class="left">
+                        <img class="avatar" src="./img/pyy.jpg" alt="">
+                        <div class="nt">
+                            <div class="name">JACKIE</div>
+                            <div class="time">2023-7-25 11:47</div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="support">
+                            <div class="img">
+                                <img src="./img/start.svg" alt="">
+                            </div>
+                            <p>2750</p>
+                        </div>
+                        <div class="reply">
+                            <div class="img">
+                                <img src="./img/forum.svg" alt="">
+                            </div>
+                            <p>765</p>
+                        </div>
+                        <div class="down">
+                            <div class="img">
+                                <img src="./img/down.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ci-text">
+                    契合人体工学的轻量化设计，不给双耳增添多余负担.利用先进的算法，带来对音源采样率的补全，恢复部分损失的高频声音，提升音质，展现接近原始的声音音效。
+                </div>
+                <div class="ci-img">
+                    <img src="./img/f-cGoods2.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航栏 -->
+        <div class="bottom-nav">
+            <a href="home.html">
+                <div class="item">
+                    <img src="./img/home.svg" alt="">
+                    <span>首页</span>
+                </div>
+            </a>
+            <a href="filterListOne.html">
+                <div class="item">
+                    <img src="./img/classify.svg" alt="">
+                    <span>分类</span>
+                </div>
+            </a>
+            <a href="myCart.html">
+                <div class="item item-center">
+                    <img src="./img/cart.svg" alt="">
+                </div>
+            </a>
+            <div class="item">
+                <img src="./img/forum2.svg" alt="">
+                <span>论坛</span>
+            </div>
+            <a href="mine.html">
+                <div class="item">
+                    <img src="./img/mine.svg" alt="">
+                    <span>我的</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+<script src="./js/adapt.js"></script>
+
+</html>

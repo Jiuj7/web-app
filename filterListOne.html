@@ -9,62 +9,78 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        
-        html,body{
-            height: 100%;;
+        html,
+        body {
+            font-size: 1px;
+            height: 100%;
         }
 
         .container {
-            width: 375px;
-            height: 100%;
-            overflow-x: hidden;
-            background-color: rgba(245, 245, 245, 1);
+            width: 375rem;
+            height: 811rem;
+
+            overflow: hidden;
+            position: relative;
+
+            background-color: rgba(250, 250, 250, 1);
+
+            display: flex;
+            flex-direction: column;
+
+            margin: 0 auto;
         }
 
         /* 顶部区域 */
         .header {
-            width: 375px;
-            height: 50px;
+            width: 375rem;
+            height: 50rem;
 
-            position: fixed;
-            z-index: 1;
-
+            padding-top: 18rem;
             background-color: rgb(255, 255, 255);
         }
 
         .header h2 {
-            font-size: 18px;
+            font-size: 18rem;
             font-weight: 500;
             color: rgba(255, 108, 114, 1);
             text-align: center;
-            line-height: 50px;
+            line-height: 50rem;
         }
 
         .header .img {
-            width: 38px;
-            height: 38px;
+            width: 38rem;
+            height: 38rem;
 
-            border-radius: 8px;
+            border-radius: 8rem;
             background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0px 3px 6px rgba(115, 6, 6, 0.2), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
-            backdrop-filter: blur(10px);
+            box-shadow: 0rem 3rem 6rem rgba(115, 6, 6, 0.2), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10rem);
 
             position: absolute;
-            right: 17px;
-            top: 5px;
+            right: 17rem;
+            top: 23rem;
 
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
+        .header .img img {
+            width: 20rem;
+            height: 20rem;
+        }
+
         /* 标题区域 */
         .labels {
-            width: 375px;
-            height: 40px;
+            width: 375rem;
+            height: 40rem;
             /* background-color: blue; */
 
             display: flex;
@@ -73,186 +89,193 @@
 
             opacity: 1;
             background: rgba(255, 255, 255, 0.3);
-            box-shadow: 0px 3px 6px rgba(97, 23, 8, 0.2), inset -1px -1px 0px rgba(255, 255, 255, 1), inset 1px 1px 0px rgba(255, 255, 255, 1);
-            backdrop-filter: blur(10px);
+            box-shadow: 0rem 3rem 6rem rgba(97, 23, 8, 0.2), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
+            backdrop-filter: blur(10rem);
 
-            position: fixed;
-            z-index: 1;
-            top:50px
         }
 
         .labels .labels-title {
-            padding: 0 25px;
+            padding: 0 25rem;
         }
 
         .labels .labels-title span {
-            padding: 7px 0;
+            padding: 8rem 0;
             color: rgba(51, 51, 51, 0.6);
-            font-size: 14px;
+            font-size: 14rem;
         }
 
         .labels .labels-title .active {
-            border-bottom: 2px solid red;
+            border-bottom: 2rem solid red;
             color: rgba(51, 51, 51, 1);
         }
 
 
         /* 内容区域 */
         .content {
-            height: 800px;
+            height: 300rem;
+
+            flex-grow: 1;
             display: flex;
 
-            position: relative;
+            overflow: hidden;
         }
 
         /* 左侧导航栏 */
         .content .menu {
-            width: 125px;
-            height: 600px;
+            width: 125rem;
+            height: 100%;
 
-            background-color: rgba(245, 245, 245, 1);
+            background-color: rgba(250, 250, 250, 1);
 
-            position: fixed;
-            top: 90px;
+            overflow-y: scroll;
+            scrollbar-width: none;
         }
 
         .content .menu li {
-            height: 46px;
-            text-align: center;
-            line-height: 46px;
+            height: 56rem;
+            line-height: 56rem;
+            padding-left: 35rem;
 
-            font-size: 16px;
+            font-size: 16rem;
             color: rgba(102, 102, 102, 1);
 
+            border-left: 3rem solid rgba(255, 224, 225, 1);
             background-color: rgba(255, 224, 225, 1);
         }
 
         .content .menu .active {
             color: rgba(255, 108, 114, 1);
-            border-left: 3px solid rgba(255, 108, 114, 1);
-            background-color: rgba(245, 245, 245, 1);
+            border-left: 3rem solid rgba(255, 108, 114, 1);
+            background-color: rgba(250, 250, 250, 1);
         }
 
         .content .menu .radius-rt {
-            border-bottom-right-radius: 30px;
+            border-bottom-right-radius: 30rem;
         }
 
         .content .menu .radius-rb {
-            border-top-right-radius: 30px;
+            border-top-right-radius: 30rem;
         }
 
         /* 右侧商品栏 */
         .content .goods {
-            width: 250px;
-            height: 600px;
-            /* background-color: red; */
-
-            position: absolute;
-            right: 0;
-            top: 90px;
+            width: 250rem;
+            height: 100%;
+            overflow-y: scroll;
+            scrollbar-width: none;
         }
 
         .content .goods .goods-title {
-            height: 60px;
+            height: 60rem;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            
+
         }
 
         .content .goods .goods-title img {
-            width: 14px;
-            height: 14px;
-            margin-right: 9px;
+            width: 14rem;
+            height: 14rem;
+            margin-right: 9rem;
 
         }
 
         .content .goods .goods-title p {
-            font-size: 14px;
+            font-size: 14rem;
             color: rgba(102, 102, 102, 1);
         }
 
         .content .goods .goods-item {
-            width: 250px;
-            height: 1000px;
+            width: 250rem;
+            /* height: 1000rem; */
         }
 
         .content .goods .goods-item .item {
-            width: 125px;
-            height: 105px;
+            width: 115rem;
+            height: 105rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             float: left;
-            margin-bottom: 24px;
+            margin: 15rem 0;
+            padding: 0 5rem;
         }
 
         .content .goods .goods-item .item p {
-            font-size: 14px;
+            font-size: 14rem;
             color: rgba(102, 102, 102, 1);
         }
 
         .content .goods .goods-item .item img {
-            width: 115px;
-            height: 85px;
+            width: 115rem;
+            height: 88rem;
         }
+
 
 
         /* 底部导航栏 */
         .bottom-nav {
-            width: 375px;
-            height: 104px;
-            /* background-color: bisque; */
-
-            position: fixed;
-            bottom: 0;
-            left: 0;
+            width: 375rem;
+            height: 77rem;
 
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: end;
 
-            background-image: url("./img/bNavBg.png");
-            background-position: -30px 17px;
+            background-image: url("./img/navBg.png");
+            background-position: 0 0;
+            background-size: 100% 100%;
             background-repeat: no-repeat;
+
+            position: fixed;
+            bottom: 0;
+
+            padding: 0 15rem;
+            box-sizing: border-box;
         }
 
         .bottom-nav .item {
-            width: 52px;
-            height: 52px;
+            width: 52rem;
+            height: 52rem;
 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-bottom: 5px;
+            margin: 10rem 0;
         }
 
         .bottom-nav .item img {
-            width: 22px;
-            height: 22px;
+            width: 24rem;
+            height: 22rem;
         }
 
         .bottom-nav .item span {
-            font-size: 14px;
-            margin-top: 4px;
+            font-size: 14rem;
+            margin-top: 4rem;
             color: rgba(255, 255, 255, 0.6);
         }
 
         .bottom-nav .item-center {
-            width: 70px;
-            height: 70px;
+            width: 60rem;
+            height: 60rem;
             border-radius: 50%;
 
-            background-image: url("./img/bNavCircle.png");
-            background-size: 70px 70px;
+            opacity: 1;
+            background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+            box-shadow: -2rem -2rem 4rem rgba(255, 255, 255, 1), 2rem 2rem 4rem rgba(161, 3, 8, 0.3), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
 
             position: relative;
-            top: -35px;
+            top: -28rem;
+        }
+
+        .bottom-nav .item-center img {
+            width: 30rem;
+            height: 30rem;
         }
     </style>
 </head>
@@ -260,7 +283,7 @@
 <body>
     <div class="container">
         <!-- 顶部区域 -->
-        <div class=" header">
+        <div class="header">
             <h2>筛选列表</h2>
             <div class="img">
                 <img src="./img/search.png" alt="">
@@ -290,15 +313,14 @@
                 <li>显卡</li>
                 <li>手机</li>
                 <li>下北泽特产</li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>笔记本</li>
+                <li>显卡</li>
+                <li>手机</li>
+                <li>下北泽特产</li>
+                <li>笔记本</li>
+                <li>显卡</li>
+                <li>手机</li>
+                <li>下北泽特产</li>
             </ul>
             <!-- 右侧商品栏 -->
             <div class="goods">
@@ -308,44 +330,48 @@
                 </div>
                 <div class="goods-item">
                     <div class="item">
-                        <img src="./img/goods.png" alt="">
+                        <img src="./img/earphone4.svg" style="width: 180rem;" alt="">
                         <p>耳机</p>
                     </div>
                     <div class="item">
-                        <img src="./img/goods.png" alt="">
+                        <img src="./img/macBook.svg" alt="">
+                        <p>笔记本</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/watch.svg" alt="" style="width: 140rem;margin-left: 20rem;">
+                        <p>智能手表</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/camera.svg" alt="">
+                        <p>相机</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/phone.svg" alt="">
+                        <p>智能手机</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/drone.svg" alt="">
+                        <p>无人机</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/mouse.svg" alt="">
+                        <p>鼠标</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/udisk.svg" alt="">
+                        <p>U盘</p>
+                    </div>
+                    <div class="item">
+                        <img src="./img/earphone3.svg" alt="">
                         <p>耳机</p>
                     </div>
                     <div class="item">
-                        <img src="./img/goods.png" alt="">
+                        <img src="./img/earphone4.svg" alt="">
                         <p>耳机</p>
                     </div>
                     <div class="item">
-                        <img src="./img/goods.png" alt="">
-                        <p>耳机</p>
                     </div>
                     <div class="item">
-                        <img src="./img/goods.png" alt="">
-                        <p>耳机</p>
-                    </div>
-                    <div class="item">
-                        <img src="./img/goods.png" alt="">
-                        <p>耳机</p>
-                    </div>
-                    <div class="item">
-                        <img src="./img/goods.png" alt="">
-                        <p>耳机</p>
-                    </div>
-                    <div class="item">
-                        <img src="./img/goods.png" alt="">
-                        <p>耳机</p>
-                    </div>
-                    <div class="item">
-                        <img src="./img/goods.png" alt="">
-                        <p>耳机</p>
-                    </div>
-                    <div class="item">
-                        <img src="./img/goods.png" alt="">
-                        <p>耳机</p>
                     </div>
                 </div>
             </div>
@@ -353,28 +379,51 @@
 
         <!-- 底部导航栏 -->
         <div class="bottom-nav">
+            <a href="home.html">
+                <div class="item">
+                    <img src="./img/home.svg" alt="">
+                    <span>首页</span>
+                </div>
+            </a>
             <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>首页</span>
-            </div>
-            <div class="item">
-                <img src="./img/home.png" alt="">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24rem"
+                    height="24rem" viewBox="0 0 22 22.0372314453125" fill="none">
+                    <path fill-rule="evenodd" fill="#FFFFFF" fill-opacity="1"
+                        d="M17.6717 11.7621L13.0043 11.7621C12.8558 11.7621 12.7145 11.7917 12.5856 11.8454C12.0934 11.951 11.7249 12.3885 11.7249 12.9119L11.7249 17.7089C11.7249 20.0956 13.6665 22.0372 16.0528 22.0372L17.6717 22.0372C20.0583 22.0372 22 20.0956 22 17.7089L22 16.09C22 13.7036 20.0583 11.7621 17.6717 11.7621ZM19.8183 17.7089C19.8183 18.8925 18.8553 19.8555 17.6717 19.8555L16.0528 19.8555C14.8693 19.8555 13.9066 18.8925 13.9066 17.7089L13.9066 13.9438L17.6717 13.9438C18.8553 13.9438 19.8183 14.9067 19.8183 16.09L19.8183 17.7089Z">
+                    </path>
+                    <path fill-rule="evenodd" fill="#FFFFFF" fill-opacity="1"
+                        d="M9.41391 11.8452C9.28537 11.7918 9.14369 11.7621 8.99561 11.7621L4.32836 11.7621C1.94174 11.7621 6.10352e-05 13.7036 6.10352e-05 16.09L6.10352e-05 17.7089C6.10352e-05 20.0956 1.94174 22.0372 4.32836 22.0372L5.94727 22.0372C8.33389 22.0372 10.2754 20.0956 10.2754 17.7089L10.2754 12.9119C10.2754 12.3881 9.90644 11.9506 9.41391 11.8452ZM8.09366 17.7089C8.09366 18.8925 7.13081 19.8555 5.94727 19.8555L4.32836 19.8555C3.14482 19.8555 2.18179 18.8925 2.18179 17.7089L2.18179 16.09C2.18179 14.9067 3.14482 13.9438 4.32836 13.9438L8.09366 13.9438L8.09366 17.7089Z">
+                    </path>
+                    <path fill-rule="evenodd" fill="#FFFFFF" fill-opacity="1"
+                        d="M4.32832 10.2752L8.99555 10.2752C9.14398 10.2752 9.28531 10.2455 9.4142 10.1919C9.90638 10.0862 10.275 9.64876 10.275 9.12533L10.275 4.32795C10.275 1.9415 8.33347 0 5.9472 0L4.3283 0C1.94168 0 0 1.9415 0 4.32795L0 5.94721C2.51973e-05 8.33365 1.9417 10.2752 4.32832 10.2752ZM2.18175 4.32795C2.18175 3.14458 3.14478 2.18173 4.32832 2.18173L5.94723 2.18173C7.1306 2.18173 8.09327 3.14458 8.09327 4.32795L8.09327 8.09342L4.32832 8.09342C3.14478 8.09342 2.18175 7.13057 2.18175 5.94721L2.18175 4.32795Z">
+                    </path>
+                    <path fill-rule="evenodd" fill="#FFFFFF" fill-opacity="1"
+                        d="M17.6717 0L16.0528 0C13.6662 0 11.7245 1.9415 11.7245 4.32795L11.7245 9.12533C11.7245 9.64911 12.0934 10.0866 12.586 10.1921C12.7145 10.2455 12.8562 10.2752 13.0043 10.2752L17.6717 10.2752C20.0583 10.2752 22 8.33365 22 5.94721L22 4.32795C22 1.9415 20.0583 0 17.6717 0ZM19.8183 5.94721C19.8183 7.13057 18.8553 8.09342 17.6717 8.09342L13.9062 8.09342L13.9062 4.32795C13.9062 3.14458 14.8693 2.18173 16.0528 2.18173L17.6717 2.18173C18.8553 2.18173 19.8183 3.14458 19.8183 4.32795L19.8183 5.94721Z">
+                    </path>
+                </svg>
                 <span>分类</span>
             </div>
-            <div class="item item-center">
-                <img src="./img/home.png" alt="">
-                <!-- <span>首页</span> -->
-            </div>
-            <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>论坛</span>
-            </div>
-            <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>我的</span>
-            </div>
+            <a href="myCart.html">
+                <div class="item item-center">
+                    <img src="./img/cart.svg" alt="">
+                </div>
+            </a>
+            <a href="forum.html">
+                <div class="item">
+                    <img src="./img/forum.svg" alt="">
+                    <span>论坛</span>
+                </div>
+            </a>
+            <a href="mine.html">
+                <div class="item">
+                    <img src="./img/mine.svg" alt="">
+                    <span>我的</span>
+                </div>
+            </a>
         </div>
     </div>
 </body>
+
+<script src="./js/adapt.js"></script>
 
 </html>

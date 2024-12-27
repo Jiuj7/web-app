@@ -11,98 +11,117 @@
             padding: 0;
         }
 
-        body,
-        html {
-            height: 100%;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-
-        body {
-            background-color: rgba(245, 245, 245, 1);
+        body,
+        html {
+            font-size: 1px;
+            height: 100%;
         }
 
         .container {
-            width: 375px;
+            width: 375rem;
             height: 100%;
+
             position: relative;
             overflow: hidden;
+
             background-image: url("./img/mineBg3.png"), url("./img/mineBg2.png"), url("./img/mineBg1.png");
-            background-position: -142px -30px, -3px -30px, 0 -57px;
+            background-position: -142rem -30rem, -3rem -30rem, 0 -57rem;
             background-repeat: no-repeat;
+            background-size: 539rem 305rem, 553rem 302rem, 375rem 317rem;
+
+            background-color: rgba(245, 245, 245, 1);
+
+            display: flex;
+            flex-direction: column;
+
+            margin: 0 auto;
         }
 
         /* 顶部 */
         .header {
-            border: 1px solid #fff;
             width: 100%;
-            height: 280px;
-            /* background: linear-gradient(236.97deg, rgba(255, 131, 67, 1) 0%, rgba(255, 108, 114, 1) 100%); */
-        }
-
-        .title {
-            margin-top: 50px;
+            height: 180rem;
+            margin-top: 35rem;
         }
 
         .title-mine {
+            font-size: 18rem;
             text-align: center;
             color: rgba(255, 255, 255, 1);
         }
 
         .title-icon {
+            width: 22rem;
+            height: 22rem;
             position: absolute;
-            top: 50px;
-            right: 20px;
+            top: 35rem;
+            right: 20rem;
+        }
+
+        .title-icon img {
+            width: 22rem;
+            height: 22rem;
         }
 
         .portrait {
             text-align: center;
-            margin-top: 14px;
+            margin-top: 14rem;
         }
 
         .portrait img {
-            width: 68px;
-            height: 68px;
+            width: 68rem;
+            height: 68rem;
             border-radius: 50%;
         }
 
         .userName {
+            font-size: 20rem;
             text-align: center;
-            margin-top: 9px;
+            margin-top: 9rem;
             color: rgba(255, 255, 255, 1);
         }
 
         .signature {
             text-align: center;
-            font-size: 10px;
+            font-size: 10rem;
             display: flex;
             justify-content: center;
-            margin-top: 4px;
+            align-items: center;
+            margin-top: 5rem;
         }
 
         .signature p {
             color: rgba(255, 255, 255, 0.7);
-            margin-right: 6px;
+            margin-right: 6rem;
+        }
+
+        .signature img {
+            width: 10rem;
+            height: 10rem;
         }
 
         /* 列表栏 */
         .list {
-            width: 335px;
-            height: 96px;
-            /* border: 1px solid; */
-            border-radius: 14px;
+            width: 335rem;
+            height: 96rem;
+            /* border: 1rem solid; */
+            border-radius: 14rem;
             background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
-            box-shadow: 0px 4px 8px rgba(97, 23, 8, 0.3), inset -2px -2px 0px rgba(255, 255, 255, 1), inset 2px 2px 0px rgba(255, 255, 255, 1);
+            box-shadow: 0rem 4rem 8rem rgba(97, 23, 8, 0.3), inset -2rem -2rem 0rem rgba(255, 255, 255, 1), inset 2rem 2rem 0rem rgba(255, 255, 255, 1);
             display: flex;
-            margin: 0 auto;
-            position: relative;
-            top: -55px;
+            margin: 0 auto 30rem auto;
         }
 
         .list-items {
-            width: 70px;
-            height: 57px;
-            border-right: 1px solid rgba(255, 255, 255, 0.7);
-            margin: 20px auto;
+            width: 70rem;
+            height: 57rem;
+            border-right: 1rem solid rgba(255, 255, 255, 0.7);
+            margin: 20rem auto;
         }
 
         .list-items:nth-child(5) {
@@ -110,117 +129,130 @@
         }
 
         .list-items .items-title {
-            font-size: 12px;
+            font-size: 12rem;
             font-weight: 500;
             text-align: center;
             color: rgba(255, 255, 255, 0.7);
         }
 
         .list-items .items-num {
-            margin-top: 5px;
-            font-size: 20px;
+            margin-top: 5rem;
+            font-size: 20rem;
             font-weight: 500;
             text-align: center;
             color: rgba(255, 255, 255, 1);
         }
 
         /* 中间内容 */
-        .mid-content{
-            position: relative;
-            top: -20px;
+        .mid-content {
+            width: 375rem;
+            height: 100rem;
+            flex-grow: 1;
+
+            overflow-y: scroll;
+            scrollbar-width: none;
         }
+
         .content-item {
-            width: 335px;
-            height: 68px;
+            width: 335rem;
+            height: 68rem;
 
             background: rgba(255, 255, 255, 1);
-            margin: 0 auto 20px auto;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(92, 92, 92, 0.1);
+            margin: 0 auto 20rem auto;
+            border-radius: 10rem;
+            box-shadow: 0rem 4rem 8rem rgba(92, 92, 92, 0.1);
 
             display: flex;
             align-items: center;
         }
 
         .content-item img {
-            width: 35px;
-            height: 27px;
+            width: 35rem;
+            height: 27rem;
 
-            margin-left: 15px;
+            margin-left: 15rem;
         }
 
-        .content-item p {
-            width: 250px;
-            margin-left: 13px;
+        .content-item div {
+            width: 250rem;
+            margin-left: 13rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .content-item p span {
-            font-size: 16px;
+        .content-item div span {
+            font-size: 16rem;
             font-weight: 500;
             color: rgba(255, 108, 114, 1);
         }
 
-        .content-item p img {
-            width: 7px;
-            height: 12px;
+        .content-item div img {
+            width: 7rem;
+            height: 12rem;
         }
 
 
         /* 底部导航栏 */
         .bottom-nav {
-            width: 375px;
-            height: 104px;
-            /* background-color: bisque; */
-
-            position: fixed;
-            bottom: 0;
-            left: 0;
+            width: 375rem;
+            height: 77rem;
 
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: end;
 
-            background-image: url("./img/bNavBg.png");
-            background-position: -30px 17px;
+            background-image: url("./img/navBg.png");
+            background-position: 0 0;
+            background-size: 100% 100%;
             background-repeat: no-repeat;
+
+            position: fixed;
+            bottom: 0;
+
+            padding: 0 15rem;
+            box-sizing: border-box;
         }
 
         .bottom-nav .item {
-            width: 52px;
-            height: 52px;
+            width: 52rem;
+            height: 52rem;
 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-bottom: 5px;
+            margin: 10rem 0;
         }
 
         .bottom-nav .item img {
-            width: 22px;
-            height: 22px;
+            width: 24rem;
+            height: 22rem;
         }
 
         .bottom-nav .item span {
-            font-size: 14px;
-            margin-top: 4px;
+            font-size: 14rem;
+            margin-top: 4rem;
             color: rgba(255, 255, 255, 0.6);
         }
 
         .bottom-nav .item-center {
-            width: 70px;
-            height: 70px;
+            width: 60rem;
+            height: 60rem;
             border-radius: 50%;
 
-            background-image: url("./img/bNavCircle.png");
-            background-size: 70px 70px;
+            opacity: 1;
+            background: linear-gradient(180deg, rgba(255, 108, 114, 1) 0%, rgba(255, 131, 67, 1) 100%);
+            box-shadow: -2rem -2rem 4rem rgba(255, 255, 255, 1), 2rem 2rem 4rem rgba(161, 3, 8, 0.3), inset -1rem -1rem 0rem rgba(255, 255, 255, 1), inset 1rem 1rem 0rem rgba(255, 255, 255, 1);
 
             position: relative;
-            top: -35px;
+            top: -28rem;
+        }
+
+        .bottom-nav .item-center img {
+            width: 30rem;
+            height: 30rem;
         }
     </style>
 </head>
@@ -273,47 +305,66 @@
         <!-- 中间内容 -->
         <div class="mid-content">
             <div class="content-item">
-                <img src="./img/MidIcon.png" alt="">
-                <p><span>在线客服</span><img src="./img/arrow.png" alt=""></p>
+                <img src="./img/midIcon.svg" alt="">
+                <div><span>在线客服</span><img src="./img/arrow.svg" alt=""></div>
             </div>
             <div class="content-item">
-                <img src="./img/MidIcon.png" alt="">
-                <p><span>在线客服</span><img src="./img/arrow.png" alt=""></p>
+                <img src="./img/staging.svg" alt="">
+                <div><span>分期付款</span><img src="./img/arrow.svg" alt=""></div>
             </div>
             <div class="content-item">
-                <img src="./img/MidIcon.png" alt="">
-                <p><span>在线客服</span><img src="./img/arrow.png" alt=""></p>
+                <img src="./img/bankCards.svg" alt="">
+                <div><span>绑定支付宝</span><img src="./img/arrow.svg" alt=""></div>
             </div>
             <div class="content-item">
-                <img src="./img/MidIcon.png" alt="">
-                <p><span>在线客服</span><img src="./img/arrow.png" alt=""></p>
+                <img src="./img/details.svg" alt="">
+                <div><span>支付明细</span><img src="./img/arrow.svg" alt=""></div>
+            </div>
+            <div style="height: 88rem;">
             </div>
         </div>
         <!-- 底部导航栏 -->
         <div class="bottom-nav">
+            <a href="home.html">
+                <div class="item">
+                    <img src="./img/home.svg" alt="">
+                    <span>首页</span>
+                </div>
+            </a>
+            <a href="filterListOne.html">
+                <div class="item">
+                    <img src="./img/classify.svg" alt="">
+                    <span>分类</span>
+                </div>
+            </a>
+            <a href="myCart.html">
+                <div class="item item-center">
+                    <img src="./img/cart.svg" alt="">
+                </div>
+            </a>
+            <a href="forum.html">
+                <div class="item">
+                    <img src="./img/forum.svg" alt="">
+                    <span>论坛</span>
+                </div>
+            </a>
             <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>首页</span>
-            </div>
-            <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>首页</span>
-            </div>
-            <div class="item item-center">
-                <img src="./img/home.png" alt="">
-                <!-- <span>首页</span> -->
-            </div>
-            <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>首页</span>
-            </div>
-            <div class="item">
-                <img src="./img/home.png" alt="">
-                <span>首页</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24rem"
+                    height="24rem" viewBox="0 0 18.60308837890625 20.60009765625" fill="none">
+                    <g opacity="1">
+                        <path fill-rule="evenodd" fill="#FFFFFF"
+                            d="M9.30414 13.6334C18.3836 13.6334 18.2936 19.3584 18.2936 19.3584C18.3624 19.8784 17.9942 20.3 17.4705 20.3L1.13776 20.3C0.614116 20.3 0.225475 19.8725 0.314658 19.3584C0.314658 19.3584 0.22302 13.6334 9.30414 13.6334ZM9.30169 0.300049L15.029 0.300049L15.029 6.13338C15.029 9.35289 12.4627 11.9667 9.30169 11.9667C6.14068 11.9667 3.57434 9.35289 3.57434 6.13338C3.57434 2.91388 6.14068 0.300049 9.30169 0.300049Z">
+                        </path>
+                        <path stroke="rgba(255, 255, 255, 1)" stroke-width="0.6"
+                            d="M9.30414 13.6334C18.3836 13.6334 18.2936 19.3584 18.2936 19.3584C18.3624 19.8784 17.9942 20.3 17.4705 20.3L1.13776 20.3C0.614116 20.3 0.225475 19.8725 0.314658 19.3584C0.314658 19.3584 0.22302 13.6334 9.30414 13.6334ZM9.30169 0.300049L15.029 0.300049L15.029 6.13338C15.029 9.35289 12.4627 11.9667 9.30169 11.9667C6.14068 11.9667 3.57434 9.35289 3.57434 6.13338C3.57434 2.91388 6.14068 0.300049 9.30169 0.300049Z">
+                        </path>
+                    </g>
+                </svg>
+                <span>我的</span>
             </div>
         </div>
     </div>
-
 </body>
+<script src="./js/adapt.js"></script>
 
 </html>
